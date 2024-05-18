@@ -1,0 +1,26 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MersadWebApplication.Site" %>
+
+<!DOCTYPE html>
+
+<html lang="fa">
+<head runat="server">
+    <meta charset="utf-8" />
+    <%--<meta name="viewport" content="width=device-width, initial-scale=1.0" />--%>
+    <title><%: Page.Title %> - سامانه مرصاد</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <script src="/Scripts/jquery-3.7.1.min.js"></script>
+    <link href="/App_Themes/bootstrap.rtl.min.css" rel="stylesheet" />
+    <link href="/App_Themes/style.css?n=14010321" rel="stylesheet" />
+    <link href="/App_Themes/solid.min.css" rel="stylesheet" />
+    <link href="/App_Themes/fontawesome.min.css" rel="stylesheet" />
+    <script src="/Scripts/fontawesome.min.js"></script><script src="/Scripts/bootstrap.min.js"></script>
+    <asp:ContentPlaceHolder runat="server" ID="Head"></asp:ContentPlaceHolder>
+</head>
+<body runat="server" autocomplete="off">
+    <form runat="server">
+        <div class="custome-container">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

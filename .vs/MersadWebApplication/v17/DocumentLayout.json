@@ -1,0 +1,49 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\Desktop\\program\\project\\Ahvaz\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{15C3E743-24AC-4289-8D0C-9D880E3913D7}|MersadWebApplication\\MersadWebApplication.csproj|c:\\users\\asus\\desktop\\program\\project\\ahvaz\\mersadwebapplication\\moderator\\user\\hadesekhiz.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{15C3E743-24AC-4289-8D0C-9D880E3913D7}|MersadWebApplication\\MersadWebApplication.csproj|solutionrelative:mersadwebapplication\\moderator\\user\\hadesekhiz.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HadeseKhiz.aspx",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\program\\project\\Ahvaz\\MersadWebApplication\\Moderator\\User\\HadeseKhiz.aspx",
+              "RelativeDocumentMoniker": "MersadWebApplication\\Moderator\\User\\HadeseKhiz.aspx",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\program\\project\\Ahvaz\\MersadWebApplication\\Moderator\\User\\HadeseKhiz.aspx",
+              "RelativeToolTip": "MersadWebApplication\\Moderator\\User\\HadeseKhiz.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-05-18T13:53:46.273Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

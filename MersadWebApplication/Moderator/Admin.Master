@@ -1,0 +1,190 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="MersadWebApplication.Moderator.Admin" %>
+
+<!DOCTYPE html>
+
+<html lang="fa">
+<head runat="server">
+    <meta charset="utf-8" />
+    <%--<meta name="viewport" content="width=device-width, initial-scale=1.0" />--%>
+    <title><%: Page.Title %> - سامانه مرصاد</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="/App_Themes/solid.min.css" rel="stylesheet" />
+    <link href="/App_Themes/fontawesome.min.css" rel="stylesheet" />
+    <script src="/Scripts/fontawesome.min.js"></script>
+    <script src="/Scripts/jquery-3.7.1.min.js"></script>
+    <link href="/App_Themes/bootstrap.rtl.min.css?n=14010321" rel="stylesheet" />
+    <script src="/Scripts/popper.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <noscript>
+        <p>جاوا اسکریپت مرورگر خود را روشن کنید</p>
+    </noscript>
+    <link href="/App_Themes/select2.min.css?n=14010209" rel="stylesheet" />
+    <script src="/Scripts/select2.min.js"></script>
+    <link href="/App_Themes/style.css?n=14010321" rel="stylesheet" />
+    <script src="/Scripts/jsMasterModeratorHelper.js?n=14010321"></script>
+    <asp:ContentPlaceHolder runat="server" ID="Head"></asp:ContentPlaceHolder>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <style>
+        /* Tooltip container */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+        }
+
+            /* Tooltip text */
+            .tooltip .tooltiptext {
+                visibility: hidden;
+                width: 120px;
+                background-color: #555;
+                color: #fff;
+                text-align: center;
+                padding: 5px 0;
+                border-radius: 6px;
+                /* Position the tooltip text */
+                position: absolute;
+                z-index: 1;
+                bottom: 125%;
+                left: 50%;
+                margin-left: -60px;
+                /* Fade in tooltip */
+                opacity: 0;
+                transition: opacity 1s;
+            }
+
+                /* Tooltip arrow */
+                .tooltip .tooltiptext::after {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: #555 transparent transparent transparent;
+                }
+
+            /* Show the tooltip text when you mouse over the tooltip container */
+            .tooltip:hover .tooltiptext {
+                visibility: visible;
+                opacity: 1;
+            }
+    </style>
+
+
+    <script>
+
+        $(document).ready(function () {
+            var Sizeh = window.innerHeight - 143;
+            $("#divFilter").height(Sizeh);
+
+
+        });
+
+    </script>
+</head>
+<body runat="server" id="bodyMaster" autocomplete="off">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <form runat="server">
+        <div class="custome-container">
+            <div class="admin-head">
+                <img src="/Images/logo.png" class="logo" />
+                <span class="logo-sep"></span>
+                <span class="date-head" id="spnToday"></span>
+                <span class="date-head">| </span>
+                <span class="date-head" id="spnUsername"></span>
+                <ul id="navigation">
+                    <li>
+                        <asp:LinkButton ID="LinkButton10" PostBackUrl="~/Moderator/Dashboard.aspx" runat="server">صفحه نخست</asp:LinkButton>
+                    </li>
+                    <li>
+                        <asp:LinkButton ID="LinkButton11" PostBackUrl="~/Moderator/Event/AccidentList.aspx" runat="server">دیتا فرم کام</asp:LinkButton>
+                    </li>
+                    <li>
+                        <asp:LinkButton ID="LinkButton12" runat="server" PostBackUrl="~/Moderator/Report/FirstViwe.aspx">نمودارها</asp:LinkButton>
+                    </li>
+                    <li>
+                        <asp:LinkButton ID="LinkButton13" runat="server" PostBackUrl="~/Moderator/Map/HeatMap.aspx">نقشه ها</asp:LinkButton>
+                    </li>
+
+                    <li>
+                        <asp:LinkButton ID="Btnuserinfo" runat="server" PostBackUrl="~/Moderator/User/UserInfo.aspx">پنل کاربری</asp:LinkButton>
+
+
+                    </li>
+                    <li>
+                        <asp:LinkButton ID="LinkButton9" runat="server" PostBackUrl="~/Moderator/User/HadeseKhiz.aspx">حادثه خیز</asp:LinkButton>
+
+
+                    </li>
+
+
+                </ul>
+
+
+
+            </div>
+            <div class="admin-after-head w-100">
+                <div class="account">
+
+
+                    <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Moderator/User/UserList.aspx">  <i class="fa fa-user-plus fa-2x"></i>&nbsp;<span>لیست کاربران</span></asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/Moderator/User/PoliceStationList.aspx"><i class="fa fa-user-police fa-2x"></i>&nbsp;<span>لیست پاسگاه ها</span></asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/Moderator/User/Plans.aspx"><i class="fa fa-user-crown fa-2x"></i>&nbsp;<span>نقش کاربران</span></asp:LinkButton>
+
+                </div>
+                <div class="event">
+                    <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/Moderator/Event/AddAccident.aspx"><i class="fa fa-car-crash fa-2x"></i>&nbsp;<span>ثبت رخداد جدید</span></asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/Moderator/Event/AccidentList.aspx"><i class="fa fa-list fa-2x"></i>&nbsp;<span>گزارشات ثبت شده</span></asp:LinkButton>
+
+                </div>
+                <div class="chart-view col-12">
+
+                    <asp:LinkButton ID="LinkButton6" runat="server" PostBackUrl="~/Moderator/Report/FirstViwe.aspx"><i class="fa fa-analytics fa-2x"></i>&nbsp;<span>در یک نگاه</span></asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton7" runat="server" PostBackUrl="~/Moderator/Report/TimeComparison.aspx"><i class="fa fa-pie-chart fa-2x"></i>&nbsp;<span>مقایسه زمانی</span></asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton8" runat="server" PostBackUrl="~/Moderator/Report/EventProcess.aspx"><i class="fa fa-calendar-check fa-2x"></i>&nbsp;<span>روند رویداد</span></asp:LinkButton>
+                    <asp:LinkButton ID="lbmoghayesemakani" runat="server" PostBackUrl="~/Moderator/Report/LocationComparison.aspx"><i class="fa fa-calendar-check fa-2x"></i>&nbsp;<span>مقایسه مکانی</span></asp:LinkButton>
+
+
+                </div>
+                <div class="map-panel">
+                    <a runat="server" href="/Moderator/Map/HeatMap.aspx" id="lnkHeatMap" visible="False" clientidmode="Static"><i class="fa fa-thermometer-4 fa-2x"></i>&nbsp;<span>نقشه حرارتی</span></a>
+
+                </div>
+                <div class="analysis">
+                    <a runat="server" href="/Moderator/Analysis/TimeAnalysis.aspx" id="lnkTimeAnalysis2" visible="False" clientidmode="Static"><i class="fa fa-clock fa-2x"></i>&nbsp;<span>تحلیل زمانی</span></a>
+                    <a runat="server" href="/Moderator/Analysis/LocationAnalysis.aspx" id="lnkLocationAnalysis" visible="False" clientidmode="Static"><i class="fa fa-crosshairs fa-2x"></i>&nbsp;<span>تحلیل مکانی</span></a>
+                </div>
+            </div>
+            <div class="admin-dead">
+                <span class="dead-icon"><i class="fa fa-bell fa-2x" style="padding-top: 3px"></i></span>&nbsp;<span class="dead-title">ناقوس مرگ تصادفات رانندگی</span>
+                <br />
+                <div class="dead-table">
+                    <span class="dead-mini-icon"><i class="fa fa-plus"></i></span>&nbsp;<span>صدمه دیدگان</span>
+                </div>
+                <div class="dead-table">
+                    <span class="dead-mini-icon"><i class="fa fa-heartbeat"></i></span>&nbsp;<span>فوت شدگان</span>
+                </div>
+                <div class="pad-bell">
+                    <span>روزانه</span>
+                    <div class="count-bell first-bell" id="divInjuredCountDaily">000</div>
+                    <div class="count-bell last-bell" id="divDeadCountDaily">000</div>
+                </div>
+                <hr />
+                <div class="pad-bell" style="margin-top: 0">
+                    <span>سالانه</span>
+                    <div class="count-bell first-bell" id="divInjuredCountYearly">000</div>
+                    <div class="count-bell last-bell" id="divDeadCountYearly">000</div>
+                </div>
+            </div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <footer>
+        <a href="/LogOut.aspx"><i class="fa fa-power-off fa-2"></i><span>خروج</span></a>
+    </footer>
+</body>
+</html>

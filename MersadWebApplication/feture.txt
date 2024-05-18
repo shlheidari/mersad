@@ -1,0 +1,13 @@
+ 
+{
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [lt]
+      },
+      "properties": {
+        "id": "Omid",
+	  "crashtype":"crtype"
+      }
+    } 
+ edame

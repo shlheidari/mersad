@@ -1,0 +1,2132 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{15C3E743-24AC-4289-8D0C-9D880E3913D7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MersadWebApplication</RootNamespace>
+    <AssemblyName>MersadWebApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44355</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AdvancedStringBuilder, Version=0.1.0.0, Culture=neutral, PublicKeyToken=e818a2fc08933ddb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AdvancedStringBuilder.0.1.0\lib\net45\AdvancedStringBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="BitMiracle.LibTiff.NET, Version=2.4.649.0, Culture=neutral, PublicKeyToken=53879b3e20e7a7d6, processorArchitecture=MSIL">
+      <HintPath>..\packages\BitMiracle.LibTiff.NET.2.4.649\lib\net40\BitMiracle.LibTiff.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="GeoJSON.Net, Version=1.2.16.0, Culture=neutral, PublicKeyToken=42c00ea87f5f14d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\GeoJSON.Net.1.2.19\lib\net45\GeoJSON.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="IronSoftware.Abstractions, Version=2023.11.0.12, Culture=neutral, PublicKeyToken=212d70e9efeae4c7, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronSoftware.Common.2023.11.12\lib\netstandard2.0\IronSoftware.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="IronSoftware.Drawing.Common, Version=2023.11.0.1, Culture=neutral, PublicKeyToken=8d7e55c97b3e9835, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronSoftware.System.Drawing.2023.11.1\lib\netstandard2.0\IronSoftware.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="IronSoftware.Logger, Version=2023.11.0.12, Culture=neutral, PublicKeyToken=212d70e9efeae4c7, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronSoftware.Common.2023.11.12\lib\netstandard2.0\IronSoftware.Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="IronSoftware.Shared, Version=2023.11.0.12, Culture=neutral, PublicKeyToken=212d70e9efeae4c7, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronSoftware.Common.2023.11.12\lib\netstandard2.0\IronSoftware.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="IronXL, Version=2023.11.12.0, Culture=neutral, PublicKeyToken=0f5804b6690bad1e, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronXL.Excel.2023.11.12\lib\netstandard2.0\IronXL.dll</HintPath>
+    </Reference>
+    <Reference Include="JavaScriptEngineSwitcher.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=c608b2a8cc9e4472, processorArchitecture=MSIL">
+      <HintPath>..\packages\JavaScriptEngineSwitcher.Core.3.1.0\lib\net45\JavaScriptEngineSwitcher.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="JSPool, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2fc7775f73072640, processorArchitecture=MSIL">
+      <HintPath>..\packages\JSPool.4.0.0\lib\net45\JSPool.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Antiforgery, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Antiforgery.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Antiforgery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authentication.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authentication.Core.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authorization, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authorization.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authorization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authorization.Policy, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authorization.Policy.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authorization.Policy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Cryptography.Internal, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Cryptography.Internal.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Cryptography.Internal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.DataProtection.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.DataProtection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.DataProtection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.DataProtection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Diagnostics.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Diagnostics.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Diagnostics.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Hosting.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Server.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Hosting.Server.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Html.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Html.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Html.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Extensions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Extensions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Features, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Features.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.JsonPatch, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.JsonPatch.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.JsonPatch.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Core.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.DataAnnotations, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.DataAnnotations.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Formatters.Json, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Formatters.Json.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Formatters.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.ViewFeatures, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.ViewFeatures.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.ViewFeatures.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.ResponseCaching.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.ResponseCaching.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Routing, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Routing.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Routing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Routing.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Routing.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Routing.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.StaticFiles, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.StaticFiles.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.StaticFiles.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.WebUtilities, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.WebUtilities.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.DotNet.PlatformAbstractions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.DotNet.PlatformAbstractions.2.1.0\lib\net45\Microsoft.DotNet.PlatformAbstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.6.0.0\lib\net461\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.6.0.0\lib\net461\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.FileExtensions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.FileExtensions.6.0.0\lib\net461\Microsoft.Extensions.Configuration.FileExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Json.6.0.0\lib\net461\Microsoft.Extensions.Configuration.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.2.2.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyModel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyModel.2.1.0\lib\net451\Microsoft.Extensions.DependencyModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Physical, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Physical.6.0.0\lib\net461\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileSystemGlobbing.6.0.0\lib\net461\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Hosting.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Hosting.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Localization, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Localization.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Localization.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Localization.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Localization.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.ObjectPool, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.ObjectPool.2.2.0\lib\netstandard2.0\Microsoft.Extensions.ObjectPool.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.6.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.WebEncoders, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.WebEncoders.2.2.0\lib\netstandard2.0\Microsoft.Extensions.WebEncoders.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Net.Http.Headers, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.Headers.2.2.0\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.4.5.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="MSCaptcha, Version=1.0.2832.11804, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MSCaptcha.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.Bson.1.0.1\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="React.AspNet, Version=5.2.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
+      <HintPath>..\packages\React.AspNet.5.2.12\lib\netstandard2.0\React.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="React.AspNet.Middleware, Version=5.2.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
+      <HintPath>..\packages\React.AspNet.Middleware.5.2.12\lib\netstandard2.0\React.AspNet.Middleware.dll</HintPath>
+    </Reference>
+    <Reference Include="React.Core, Version=5.2.0.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
+      <HintPath>..\packages\React.Core.5.2.12\lib\net45\React.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.ImageSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.ImageSharp.2.1.6\lib\net472\SixLabors.ImageSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.ImageSharp.Drawing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.ImageSharp.Drawing.1.0.0\lib\net472\SixLabors.ImageSharp.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Stimulsoft.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Stimulsoft.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Stimulsoft.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Web, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Stimulsoft.Report.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.WebDesign, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Stimulsoft.Report.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.6.0.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Xml, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Xml.4.5.0\lib\net461\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.6.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.6.0.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.3.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.3.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\404.css" />
+    <Content Include="App_Themes\bootstrap-clockpicker.min.css" />
+    <Content Include="App_Themes\bootstrap-treeview.min.css" />
+    <Content Include="App_Themes\bootstrap.min.css" />
+    <Content Include="App_Themes\bootstrap.rtl.min.css" />
+    <Content Include="App_Themes\dropzone.css" />
+    <Content Include="App_Themes\fontawesome.min.css" />
+    <Content Include="App_Themes\fonts\IRANSans-Light.svg" />
+    <Content Include="App_Themes\jquery-clockpicker.min.css" />
+    <Content Include="App_Themes\jquery-ui.css" />
+    <Content Include="App_Themes\jquery.md.bootstrap.datetimepicker.style.css" />
+    <Content Include="App_Themes\light.min.css" />
+    <Content Include="App_Themes\loading-bar.min.css" />
+    <Content Include="App_Themes\material.min.css" />
+    <Content Include="App_Themes\select2.min.css" />
+    <Content Include="App_Themes\solid.min.css" />
+    <Content Include="App_Themes\style - Copy.css" />
+    <Content Include="App_Themes\style.css" />
+    <Content Include="Captcha.aspx" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\PersianDatePicker.css" />
+    <Content Include="Content\PersianDatePicker.min.css" />
+    <Content Include="css\bootstrap-grid.css" />
+    <Content Include="css\bootstrap-grid.min.css" />
+    <Content Include="css\bootstrap-grid.rtl.css" />
+    <Content Include="css\bootstrap-grid.rtl.min.css" />
+    <Content Include="css\bootstrap-reboot.css" />
+    <Content Include="css\bootstrap-reboot.min.css" />
+    <Content Include="css\bootstrap-reboot.rtl.css" />
+    <Content Include="css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="css\bootstrap-utilities.css" />
+    <Content Include="css\bootstrap-utilities.min.css" />
+    <Content Include="css\bootstrap-utilities.rtl.css" />
+    <Content Include="css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\bootstrap.rtl.css" />
+    <Content Include="css\bootstrap.rtl.min.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="ErrorPage.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="feture.txt" />
+    <Content Include="Forbiden.html" />
+    <Content Include="Geo\Iran.txt" />
+    <Content Include="Geo\Khozestan\Abadan.txt" />
+    <Content Include="Geo\Khozestan\Aghajari.txt" />
+    <Content Include="Geo\Khozestan\Ahvaz.txt" />
+    <Content Include="Geo\Khozestan\Andika.txt" />
+    <Content Include="Geo\Khozestan\Andimeshk.txt" />
+    <Content Include="Geo\Khozestan\BaghMalek.txt" />
+    <Content Include="Geo\Khozestan\Bavi.txt" />
+    <Content Include="Geo\Khozestan\Behbahan.txt" />
+    <Content Include="Geo\Khozestan\DahsteAzadegan.txt" />
+    <Content Include="Geo\Khozestan\Dezful.txt" />
+    <Content Include="Geo\Khozestan\Dezpart.txt" />
+    <Content Include="Geo\Khozestan\Eze.txt" />
+    <Content Include="Geo\Khozestan\Gotvand.txt" />
+    <Content Include="Geo\Khozestan\Haftkol.txt" />
+    <Content Include="Geo\Khozestan\Hamidie.txt" />
+    <Content Include="Geo\Khozestan\Hendijan.txt" />
+    <Content Include="Geo\Khozestan\Hoveize.txt" />
+    <Content Include="Geo\Khozestan\Karkhe.txt" />
+    <Content Include="Geo\Khozestan\Karoun.txt" />
+    <Content Include="Geo\Khozestan\Khoramshahr.txt" />
+    <Content Include="Geo\Khozestan\Lali.txt" />
+    <Content Include="Geo\Khozestan\Mahshahr.txt" />
+    <Content Include="Geo\Khozestan\MasjedSoleiman.txt" />
+    <Content Include="Geo\Khozestan\Omidie.txt" />
+    <Content Include="Geo\Khozestan\Ramhormoz.txt" />
+    <Content Include="Geo\Khozestan\Ramshir.txt" />
+    <Content Include="Geo\Khozestan\Shadegan.txt" />
+    <Content Include="Geo\Khozestan\Shooshtar.txt" />
+    <Content Include="Geo\Khozestan\Shush.txt" />
+    <Content Include="Geo\MehvarAhvazMahshahr.txt" />
+    <Content Include="Geo\Province\Khozestan.txt" />
+    <Content Include="GetLogin.html" />
+    <Content Include="Global.asax" />
+    <Content Include="HtmlPage1.html" />
+    <Content Include="Images\accident-picture-help.jpg" />
+    <Content Include="Images\adametavajobejolo.png" />
+    <Content Include="Images\adamhaghtaghaadom.png" />
+    <Content Include="Images\adamrayatfaseletoli.png" />
+    <Content Include="Images\addlocation.png" />
+    <Content Include="Images\angle-gray.png" />
+    <Content Include="Images\angle.png" />
+    <Content Include="Images\background.jpg" />
+    <Content Include="Images\bande-savare.png" />
+    <Content Include="Images\barrier.png" />
+    <Content Include="Images\belt-back.png" />
+    <Content Include="Images\belt.png" />
+    <Content Include="Images\belt.svg" />
+    <Content Include="Images\bike.png" />
+    <Content Include="Images\BtnClose.png" />
+    <Content Include="Images\bus.png" />
+    <Content Include="Images\cal.png" />
+    <Content Include="Images\calLeft.png" />
+    <Content Include="Images\car-accident.jpg" />
+    <Content Include="Images\car.png" />
+    <Content Include="Images\carcrashed.png" />
+    <Content Include="Images\clock.png" />
+    <Content Include="Images\compass.png" />
+    <Content Include="Images\DarSafeEghdam.png" />
+    <Content Include="Images\dead.png" />
+    <Content Include="Images\doc.png" />
+    <Content Include="Images\enherafbechap.png" />
+    <Content Include="Images\fixedobject.png" />
+    <Content Include="Images\gridTop.png" />
+    <Content Include="Images\Group 4237.png" />
+    <Content Include="Images\Group 4238.png" />
+    <Content Include="Images\Group 4244.png" />
+    <Content Include="Images\Group 5183.png" />
+    <Content Include="Images\Group 5425.png" />
+    <Content Include="Images\Group 5430.png" />
+    <Content Include="Images\Group 5567.png" />
+    <Content Include="Images\guide.png" />
+    <Content Include="Images\harkatekhalafjahat.png" />
+    <Content Include="Images\head-on-gray.png" />
+    <Content Include="Images\head-on.png" />
+    <Content Include="Images\header-footer-gradient-bg.png" />
+    <Content Include="Images\helmet-back.png" />
+    <Content Include="Images\helmet.png" />
+    <Content Include="Images\IconBazdidShode.png" />
+    <Content Include="Images\iconCamera.png" />
+    <Content Include="Images\IconEghdamShode.png" />
+    <Content Include="Images\IconElamShode.png" />
+    <Content Include="Images\iconGps.png" />
+    <Content Include="Images\IconMines.png" />
+    <Content Include="Images\IconPlus.png" />
+    <Content Include="Images\images.png" />
+    <Content Include="Images\incomplete-location-gray.png" />
+    <Content Include="Images\incomplete-location-orange.png" />
+    <Content Include="Images\incomplete-location-red.png" />
+    <Content Include="Images\incomplete-location-yellow.png" />
+    <Content Include="Images\injured.png" />
+    <Content Include="Images\iran-left-pelak.jpg" />
+    <Content Include="Images\iran-top-pelak.jpg" />
+    <Content Include="Images\kenarjadeh-harim.png" />
+    <Content Include="Images\kharejazharimrah.png" />
+    <Content Include="Images\khorojazmasir.png" />
+    <Content Include="Images\lamp.png" />
+    <Content Include="Images\lightning.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\moon.png" />
+    <Content Include="Images\motor.png" />
+    <Content Include="Images\naghsefanivasile.png" />
+    <Content Include="Images\naghsemadeh4.png" />
+    <Content Include="Images\natavanidarcontrolvasile.png" />
+    <Content Include="Images\navybar.png" />
+    <Content Include="Images\not-allow-speed.png" />
+    <Content Include="Images\NotFound.png" />
+    <Content Include="Images\obormamno.png" />
+    <Content Include="Images\one.png" />
+    <Content Include="Images\other.png" />
+    <Content Include="Images\outoffroad.png" />
+    <Content Include="Images\overthrowfall.png" />
+    <Content Include="Images\passer.png" />
+    <Content Include="Images\pin.png" />
+    <Content Include="Images\question.png" />
+    <Content Include="Images\rear-end-gray.png" />
+    <Content Include="Images\rear-end.png" />
+    <Content Include="Images\Rectangle 3312.png" />
+    <Content Include="Images\Rectangle 3385.png" />
+    <Content Include="Images\rise.png" />
+    <Content Include="Images\rofoj-miyane-ro.png" />
+    <Content Include="Images\shane.png" />
+    <Content Include="Images\sidewipe-od-gray.png" />
+    <Content Include="Images\sidewipe-od.png" />
+    <Content Include="Images\sidewipe-sd-gray.png" />
+    <Content Include="Images\sidewipe-sd.png" />
+    <Content Include="Images\sleepy.png" />
+    <Content Include="Images\sun.png" />
+    <Content Include="Images\sunset.png" />
+    <Content Include="Images\taghirmasirnagahani.png" />
+    <Content Include="Images\three.png" />
+    <Content Include="Images\two.png" />
+    <Content Include="Images\vision.png" />
+    <Content Include="jsdatetime\jquery.mpdatepicker.css" />
+    <Content Include="jsdatetime\jquery.mpdatepicker.js" />
+    <Content Include="js\bootstrap.bundle.js" />
+    <Content Include="js\bootstrap.bundle.min.js" />
+    <Content Include="js\bootstrap.esm.js" />
+    <Content Include="js\bootstrap.esm.min.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="LogOut.aspx" />
+    <Content Include="MediaUploader\Accident\01b4050d-a8d5-41ff-8333-0b1c271d6cdd1.jpg" />
+    <Content Include="MediaUploader\Accident\01ef7a4d-fd5b-4211-be64-b534f31d6375.jpg" />
+    <Content Include="MediaUploader\Accident\023815d4-bf35-4887-8dc4-ad154fa7b6e01.jpg" />
+    <Content Include="MediaUploader\Accident\023815d4-bf35-4887-8dc4-ad154fa7b6e02.jpg" />
+    <Content Include="MediaUploader\Accident\023815d4-bf35-4887-8dc4-ad154fa7b6e03.jpg" />
+    <Content Include="MediaUploader\Accident\02769773-c2ec-4688-94be-a20c88ebad18.jpg" />
+    <Content Include="MediaUploader\Accident\0338d45c-01a3-4f72-9ecc-7b324b5f34071.jpg" />
+    <Content Include="MediaUploader\Accident\03549795-7d27-4eba-83ca-3d28ebf07f1a.jpg" />
+    <Content Include="MediaUploader\Accident\03549795-7d27-4eba-83ca-3d28ebf07f1a.wav" />
+    <Content Include="MediaUploader\Accident\03a1fa88-64e9-4efd-8a5f-a77a714b99e5.jpg" />
+    <Content Include="MediaUploader\Accident\03b7c613-bee8-4c0c-890e-1caee1c00b051.jpg" />
+    <Content Include="MediaUploader\Accident\04094b9d-8d0a-455f-8cbf-1351eb0472931.jpg" />
+    <Content Include="MediaUploader\Accident\0420a050-46e0-4fa6-a619-f932d476b149.jpg" />
+    <Content Include="MediaUploader\Accident\058d9fad-176d-4bc7-bddc-72258c339ef9.jpg" />
+    <Content Include="MediaUploader\Accident\06e94348-1499-429c-9819-86b99d97fca.jpg" />
+    <Content Include="MediaUploader\Accident\08602dce-656b-4279-92b5-a7dbc7291edf.jpg" />
+    <Content Include="MediaUploader\Accident\0893257a-42c2-493f-a144-989ac8cd67af.jpg" />
+    <Content Include="MediaUploader\Accident\28bd33f2-4a51-4773-94e9-aad1cceead44.jpg" />
+    <Content Include="MediaUploader\Accident\3af95056-d8c9-457a-87d0-92e5479aafc7.jpg" />
+    <Content Include="MediaUploader\Accident\3dcd0195-a6be-43c9-bd9f-9c44d8724463.jpg" />
+    <Content Include="MediaUploader\Accident\4590e880-98cd-411b-9fcf-6fd0ad303837.jpg" />
+    <Content Include="Moderator\AddNewLocation.aspx" />
+    <Content Include="Moderator\Dashboard.aspx" />
+    <Content Include="Moderator\Event\AccidentList.aspx" />
+    <Content Include="Moderator\Event\AddAccident.aspx" />
+    <Content Include="Moderator\Event\CheckAccident.aspx" />
+    <Content Include="Moderator\HadeseKhiz.aspx" />
+    <Content Include="Moderator\Map\HeatMap.aspx" />
+    <Content Include="Moderator\Map\placeholder.png" />
+    <Content Include="Moderator\Map\placeholder3.png" />
+    <Content Include="Moderator\Map\placeholder4.png" />
+    <Content Include="Moderator\Map\SafetyIndex.aspx" />
+    <Content Include="Moderator\Map\Newmap.aspx" />
+    <Content Include="Moderator\Print\AccidentReport.aspx" />
+    <Content Include="Moderator\Report\EventProcess.aspx" />
+    <Content Include="Moderator\Report\FirstViwe.aspx" />
+    <Content Include="Moderator\Report\LocationComparison.aspx" />
+    <Content Include="Moderator\Report\TimeComparison.aspx" />
+    <Content Include="Moderator\Analysis\LocationAnalysis.aspx" />
+    <Content Include="Moderator\Analysis\TimeAnalysis.aspx" />
+    <Content Include="Moderator\SinglePage.aspx" />
+    <Content Include="Moderator\User\AddNewLocation.aspx" />
+    <Content Include="Moderator\User\HadeseKhiz.aspx" />
+    <Content Include="Scripts - Copy\angular-route.min.js" />
+    <Content Include="Scripts - Copy\angular-sanitize.min.js" />
+    <Content Include="Scripts - Copy\angular.min.js" />
+    <Content Include="Scripts - Copy\blackspot.js" />
+    <Content Include="Scripts - Copy\bootstrap-clockpicker.min.js" />
+    <Content Include="Scripts - Copy\bootstrap-treeview.min.js" />
+    <Content Include="Scripts - Copy\bootstrap.bundle.js" />
+    <Content Include="Scripts - Copy\bootstrap.bundle.min.js" />
+    <Content Include="Scripts - Copy\bootstrap.esm.js" />
+    <Content Include="Scripts - Copy\bootstrap.esm.min.js" />
+    <Content Include="Scripts - Copy\bootstrap.js" />
+    <Content Include="Scripts - Copy\bootstrap.min.js" />
+    <Content Include="Scripts - Copy\chart.min.js" />
+    <Content Include="Scripts - Copy\chartjs-plugin-datalabels.js" />
+    <Content Include="Scripts - Copy\chartjs-plugin-datalabels.min.js" />
+    <Content Include="Scripts - Copy\chartjs\chartjs-adapter-luxon%401.0.0.js" />
+    <Content Include="Scripts - Copy\chartjs\chartjs-chart-financial.js" />
+    <Content Include="Scripts - Copy\chartjs\chartjs-plugin-piechart-outlabels.min.js" />
+    <Content Include="Scripts - Copy\chartjs\luxon%401.26.0.js" />
+    <Content Include="Scripts - Copy\chartjs\utils.js" />
+    <Content Include="Scripts - Copy\compressor.min.js" />
+    <Content Include="Scripts - Copy\dropzone-min.js" />
+    <Content Include="Scripts - Copy\fontawesome.min.js" />
+    <Content Include="Scripts - Copy\grouped-categories.js" />
+    <Content Include="Scripts - Copy\highcharts-accessibility.js" />
+    <Content Include="Scripts - Copy\highcharts-coloraxis.js" />
+    <Content Include="Scripts - Copy\highcharts-highstock.js" />
+    <Content Include="Scripts - Copy\highcharts-more.js" />
+    <Content Include="Scripts - Copy\highcharts.js" />
+    <Content Include="Scripts - Copy\html2canvas.min.js" />
+    <Content Include="Scripts - Copy\jalali-moment.browser.js" />
+    <Content Include="Scripts - Copy\jquery-3.7.1.min.js" />
+    <Content Include="Scripts - Copy\jquery-clockpicker.min.js" />
+    <Content Include="Scripts - Copy\jquery-ui.js" />
+    <Content Include="Scripts - Copy\jquery.inlineStyler.min.js" />
+    <Content Include="Scripts - Copy\jquery.js" />
+    <Content Include="Scripts - Copy\jquery.md.bootstrap.datetimepicker.js" />
+    <Content Include="Scripts - Copy\jquery.md.bootstrap.datetimepicker.min.js" />
+    <Content Include="Scripts - Copy\js.map.city.js" />
+    <Content Include="Scripts - Copy\js.map.select.city.js" />
+    <Content Include="Scripts - Copy\jsAccidentHelper.js" />
+    <Content Include="Scripts - Copy\jsAccidentListHelper.js" />
+    <Content Include="Scripts - Copy\jsAccidentMapHelper.js" />
+    <Content Include="Scripts - Copy\jsAlertHelper.js" />
+    <Content Include="Scripts - Copy\jsCauseAudio.js" />
+    <Content Include="Scripts - Copy\jsCheckAccidentHelper.js" />
+    <Content Include="Scripts - Copy\jsConvertNumberHelper.js" />
+    <Content Include="Scripts - Copy\jsDashboadMapHelper.js" />
+    <Content Include="Scripts - Copy\jsEventProcessHelper.js" />
+    <Content Include="Scripts - Copy\jsExplanationAudio.js" />
+    <Content Include="Scripts - Copy\jsFirstViewHelper.js" />
+    <Content Include="Scripts - Copy\jsFsType.js" />
+    <Content Include="Scripts - Copy\jsHeatMapHelper.js" />
+    <Content Include="Scripts - Copy\jsHelper.js" />
+    <Content Include="Scripts - Copy\jsLocationAnalysisHelper.js" />
+    <Content Include="Scripts - Copy\jsLocationAnalysisMapHelper.js" />
+    <Content Include="Scripts - Copy\jsLocationComparisonFilter.js" />
+    <Content Include="Scripts - Copy\jsLocationComparisonHelper.js" />
+    <Content Include="Scripts - Copy\jsLocationComparisonHelperMap.js" />
+    <Content Include="Scripts - Copy\jsMasterModeratorHelper.js" />
+    <Content Include="Scripts - Copy\jsModalHelper.js" />
+    <Content Include="Scripts - Copy\jsNationalIdChecker.js" />
+    <Content Include="Scripts - Copy\jspdf.debug.js" />
+    <Content Include="Scripts - Copy\jspdf.umd.min.js" />
+    <Content Include="Scripts - Copy\jsSafetyIndexMapHelper.js" />
+    <Content Include="Scripts - Copy\jstat.min.js" />
+    <Content Include="Scripts - Copy\jsTimeAnalysisHelper.js" />
+    <Content Include="Scripts - Copy\jsTimeComparisonHelper - Copy.js" />
+    <Content Include="Scripts - Copy\jsTimeComparisonHelper.js" />
+    <Content Include="Scripts - Copy\jsToastHelper.js" />
+    <Content Include="Scripts - Copy\leaflet.ajax.min.js" />
+    <Content Include="Scripts - Copy\leaflet\images\layers-2x.png" />
+    <Content Include="Scripts - Copy\leaflet\images\layers.png" />
+    <Content Include="Scripts - Copy\leaflet\images\marker-icon-2x.png" />
+    <Content Include="Scripts - Copy\leaflet\images\marker-icon.png" />
+    <Content Include="Scripts - Copy\leaflet\images\marker-shadow.png" />
+    <Content Include="Scripts - Copy\leaflet\leaflet-canvasicon.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\Control.Draw.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\copyright.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\draw\DrawToolbar.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\draw\handler\Draw.Circle.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\draw\handler\Draw.CircleMarker.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\draw\handler\Draw.Feature.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\draw\handler\Draw.Marker.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\draw\handler\Draw.Polygon.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\draw\handler\Draw.Polyline.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\draw\handler\Draw.Rectangle.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\draw\handler\Draw.SimpleShape.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\edit\EditToolbar.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\edit\handler\Edit.Circle.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\edit\handler\Edit.CircleMarker.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\edit\handler\Edit.Marker.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\edit\handler\Edit.Poly.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\edit\handler\Edit.Rectangle.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\edit\handler\Edit.SimpleShape.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\edit\handler\EditToolbar.Delete.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\edit\handler\EditToolbar.Edit.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\ext\GeometryUtil.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\ext\LatLngUtil.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\ext\LineUtil.Intersect.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\ext\Polygon.Intersect.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\ext\Polyline.Intersect.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\ext\TouchEvents.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\images\spritesheet-2x.png" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\images\spritesheet.png" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\images\spritesheet.svg" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\leaflet.draw.css" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\Leaflet.Draw.Event.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\Leaflet.draw.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\Toolbar.js" />
+    <Content Include="Scripts - Copy\leaflet\Leaflet-draw\Tooltip.js" />
+    <Content Include="Scripts - Copy\leaflet\leaflet-geodesy.js" />
+    <Content Include="Scripts - Copy\leaflet\leaflet-geoman.min.js" />
+    <Content Include="Scripts - Copy\leaflet\leaflet-heat.js" />
+    <Content Include="Scripts - Copy\leaflet\leaflet-locatecontrol\L.Control.Locate.css" />
+    <Content Include="Scripts - Copy\leaflet\leaflet-locatecontrol\L.Control.Locate.mapbox.css" />
+    <Content Include="Scripts - Copy\leaflet\leaflet-locatecontrol\L.Control.Locate.mapbox.min.css" />
+    <Content Include="Scripts - Copy\leaflet\leaflet-locatecontrol\L.Control.Locate.min.css" />
+    <Content Include="Scripts - Copy\leaflet\leaflet-locatecontrol\L.Control.Locate.min.js" />
+    <Content Include="Scripts - Copy\leaflet\leaflet-piechart.js" />
+    <Content Include="Scripts - Copy\leaflet\leaflet-rotate-src.js" />
+    <Content Include="Scripts - Copy\leaflet\leaflet-src.esm.js" />
+    <Content Include="Scripts - Copy\leaflet\leaflet-src.js" />
+    <Content Include="Scripts - Copy\leaflet\leaflet-transparency.js" />
+    <Content Include="Scripts - Copy\leaflet\leaflet.ajax.min.js" />
+    <Content Include="Scripts - Copy\leaflet\leaflet.circle.topolygon-src.min.js" />
+    <Content Include="Scripts - Copy\leaflet\leaflet.css" />
+    <Content Include="Scripts - Copy\leaflet\leaflet.js" />
+    <Content Include="Scripts - Copy\leaflet\location-arrow-solid.svg" />
+    <Content Include="Scripts - Copy\leaflet\spinner-solid.svg" />
+    <Content Include="Scripts - Copy\loading-bar.min.js" />
+    <Content Include="Scripts - Copy\localization\messages_fa.min.js" />
+    <Content Include="Scripts - Copy\mapbox\mapbox-gl-draw.css" />
+    <Content Include="Scripts - Copy\mapbox\mapbox-gl-draw.js" />
+    <Content Include="Scripts - Copy\mapbox\mapbox-gl.css" />
+    <Content Include="Scripts - Copy\mapbox\mapbox-gl.js" />
+    <Content Include="Scripts - Copy\material.min.js" />
+    <Content Include="Scripts - Copy\ol\array.js" />
+    <Content Include="Scripts - Copy\ol\AssertionError.js" />
+    <Content Include="Scripts - Copy\ol\asserts.js" />
+    <Content Include="Scripts - Copy\ol\centerconstraint.js" />
+    <Content Include="Scripts - Copy\ol\Collection.js" />
+    <Content Include="Scripts - Copy\ol\CollectionEventType.js" />
+    <Content Include="Scripts - Copy\ol\color.js" />
+    <Content Include="Scripts - Copy\ol\colorlike.js" />
+    <Content Include="Scripts - Copy\ol\control.js" />
+    <Content Include="Scripts - Copy\ol\control\Attribution.js" />
+    <Content Include="Scripts - Copy\ol\control\Control.js" />
+    <Content Include="Scripts - Copy\ol\control\FullScreen.js" />
+    <Content Include="Scripts - Copy\ol\control\MousePosition.js" />
+    <Content Include="Scripts - Copy\ol\control\OverviewMap.js" />
+    <Content Include="Scripts - Copy\ol\control\Rotate.js" />
+    <Content Include="Scripts - Copy\ol\control\ScaleLine.js" />
+    <Content Include="Scripts - Copy\ol\control\Zoom.js" />
+    <Content Include="Scripts - Copy\ol\control\ZoomSlider.js" />
+    <Content Include="Scripts - Copy\ol\control\ZoomToExtent.js" />
+    <Content Include="Scripts - Copy\ol\coordinate.js" />
+    <Content Include="Scripts - Copy\ol\css.js" />
+    <Content Include="Scripts - Copy\ol\DataTile.js" />
+    <Content Include="Scripts - Copy\ol\Disposable.js" />
+    <Content Include="Scripts - Copy\ol\dom.js" />
+    <Content Include="Scripts - Copy\ol\easing.js" />
+    <Content Include="Scripts - Copy\ol\events.js" />
+    <Content Include="Scripts - Copy\ol\events\condition.js" />
+    <Content Include="Scripts - Copy\ol\events\Event.js" />
+    <Content Include="Scripts - Copy\ol\events\EventType.js" />
+    <Content Include="Scripts - Copy\ol\events\KeyCode.js" />
+    <Content Include="Scripts - Copy\ol\events\Target.js" />
+    <Content Include="Scripts - Copy\ol\extent.js" />
+    <Content Include="Scripts - Copy\ol\extent\Corner.js" />
+    <Content Include="Scripts - Copy\ol\extent\Relationship.js" />
+    <Content Include="Scripts - Copy\ol\Feature.js" />
+    <Content Include="Scripts - Copy\ol\featureloader.js" />
+    <Content Include="Scripts - Copy\ol\format.js" />
+    <Content Include="Scripts - Copy\ol\format\EsriJSON.js" />
+    <Content Include="Scripts - Copy\ol\format\Feature.js" />
+    <Content Include="Scripts - Copy\ol\format\filter.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\And.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\Bbox.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\Comparison.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\ComparisonBinary.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\Contains.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\Disjoint.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\During.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\DWithin.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\EqualTo.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\Filter.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\GreaterThan.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\GreaterThanOrEqualTo.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\Intersects.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\IsBetween.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\IsLike.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\IsNull.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\LessThan.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\LessThanOrEqualTo.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\LogicalNary.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\Not.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\NotEqualTo.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\Or.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\ResourceId.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\Spatial.js" />
+    <Content Include="Scripts - Copy\ol\format\filter\Within.js" />
+    <Content Include="Scripts - Copy\ol\format\FormatType.js" />
+    <Content Include="Scripts - Copy\ol\format\GeoJSON.js" />
+    <Content Include="Scripts - Copy\ol\format\GML.js" />
+    <Content Include="Scripts - Copy\ol\format\GML2.js" />
+    <Content Include="Scripts - Copy\ol\format\GML3.js" />
+    <Content Include="Scripts - Copy\ol\format\GML32.js" />
+    <Content Include="Scripts - Copy\ol\format\GMLBase.js" />
+    <Content Include="Scripts - Copy\ol\format\GPX.js" />
+    <Content Include="Scripts - Copy\ol\format\IGC.js" />
+    <Content Include="Scripts - Copy\ol\format\IIIFInfo.js" />
+    <Content Include="Scripts - Copy\ol\format\JSONFeature.js" />
+    <Content Include="Scripts - Copy\ol\format\KML.js" />
+    <Content Include="Scripts - Copy\ol\format\MVT.js" />
+    <Content Include="Scripts - Copy\ol\format\OSMXML.js" />
+    <Content Include="Scripts - Copy\ol\format\OWS.js" />
+    <Content Include="Scripts - Copy\ol\format\Polyline.js" />
+    <Content Include="Scripts - Copy\ol\format\TextFeature.js" />
+    <Content Include="Scripts - Copy\ol\format\TopoJSON.js" />
+    <Content Include="Scripts - Copy\ol\format\WFS.js" />
+    <Content Include="Scripts - Copy\ol\format\WKB.js" />
+    <Content Include="Scripts - Copy\ol\format\WKT.js" />
+    <Content Include="Scripts - Copy\ol\format\WMSCapabilities.js" />
+    <Content Include="Scripts - Copy\ol\format\WMSGetFeatureInfo.js" />
+    <Content Include="Scripts - Copy\ol\format\WMTSCapabilities.js" />
+    <Content Include="Scripts - Copy\ol\format\xlink.js" />
+    <Content Include="Scripts - Copy\ol\format\XML.js" />
+    <Content Include="Scripts - Copy\ol\format\XMLFeature.js" />
+    <Content Include="Scripts - Copy\ol\format\xsd.js" />
+    <Content Include="Scripts - Copy\ol\functions.js" />
+    <Content Include="Scripts - Copy\ol\Geolocation.js" />
+    <Content Include="Scripts - Copy\ol\geom.js" />
+    <Content Include="Scripts - Copy\ol\geom\Circle.js" />
+    <Content Include="Scripts - Copy\ol\geom\flat\area.js" />
+    <Content Include="Scripts - Copy\ol\geom\flat\center.js" />
+    <Content Include="Scripts - Copy\ol\geom\flat\closest.js" />
+    <Content Include="Scripts - Copy\ol\geom\flat\contains.js" />
+    <Content Include="Scripts - Copy\ol\geom\flat\deflate.js" />
+    <Content Include="Scripts - Copy\ol\geom\flat\flip.js" />
+    <Content Include="Scripts - Copy\ol\geom\flat\geodesic.js" />
+    <Content Include="Scripts - Copy\ol\geom\flat\inflate.js" />
+    <Content Include="Scripts - Copy\ol\geom\flat\interiorpoint.js" />
+    <Content Include="Scripts - Copy\ol\geom\flat\interpolate.js" />
+    <Content Include="Scripts - Copy\ol\geom\flat\intersectsextent.js" />
+    <Content Include="Scripts - Copy\ol\geom\flat\length.js" />
+    <Content Include="Scripts - Copy\ol\geom\flat\orient.js" />
+    <Content Include="Scripts - Copy\ol\geom\flat\reverse.js" />
+    <Content Include="Scripts - Copy\ol\geom\flat\segments.js" />
+    <Content Include="Scripts - Copy\ol\geom\flat\simplify.js" />
+    <Content Include="Scripts - Copy\ol\geom\flat\straightchunk.js" />
+    <Content Include="Scripts - Copy\ol\geom\flat\textpath.js" />
+    <Content Include="Scripts - Copy\ol\geom\flat\topology.js" />
+    <Content Include="Scripts - Copy\ol\geom\flat\transform.js" />
+    <Content Include="Scripts - Copy\ol\geom\Geometry.js" />
+    <Content Include="Scripts - Copy\ol\geom\GeometryCollection.js" />
+    <Content Include="Scripts - Copy\ol\geom\GeometryLayout.js" />
+    <Content Include="Scripts - Copy\ol\geom\GeometryType.js" />
+    <Content Include="Scripts - Copy\ol\geom\LinearRing.js" />
+    <Content Include="Scripts - Copy\ol\geom\LineString.js" />
+    <Content Include="Scripts - Copy\ol\geom\MultiLineString.js" />
+    <Content Include="Scripts - Copy\ol\geom\MultiPoint.js" />
+    <Content Include="Scripts - Copy\ol\geom\MultiPolygon.js" />
+    <Content Include="Scripts - Copy\ol\geom\Point.js" />
+    <Content Include="Scripts - Copy\ol\geom\Polygon.js" />
+    <Content Include="Scripts - Copy\ol\geom\SimpleGeometry.js" />
+    <Content Include="Scripts - Copy\ol\has.js" />
+    <Content Include="Scripts - Copy\ol\Image.js" />
+    <Content Include="Scripts - Copy\ol\ImageBase.js" />
+    <Content Include="Scripts - Copy\ol\ImageCanvas.js" />
+    <Content Include="Scripts - Copy\ol\ImageState.js" />
+    <Content Include="Scripts - Copy\ol\ImageTile.js" />
+    <Content Include="Scripts - Copy\ol\index.js" />
+    <Content Include="Scripts - Copy\ol\interaction.js" />
+    <Content Include="Scripts - Copy\ol\interaction\DoubleClickZoom.js" />
+    <Content Include="Scripts - Copy\ol\interaction\DragAndDrop.js" />
+    <Content Include="Scripts - Copy\ol\interaction\DragBox.js" />
+    <Content Include="Scripts - Copy\ol\interaction\DragPan.js" />
+    <Content Include="Scripts - Copy\ol\interaction\DragRotate.js" />
+    <Content Include="Scripts - Copy\ol\interaction\DragRotateAndZoom.js" />
+    <Content Include="Scripts - Copy\ol\interaction\DragZoom.js" />
+    <Content Include="Scripts - Copy\ol\interaction\Draw.js" />
+    <Content Include="Scripts - Copy\ol\interaction\Extent.js" />
+    <Content Include="Scripts - Copy\ol\interaction\Interaction.js" />
+    <Content Include="Scripts - Copy\ol\interaction\KeyboardPan.js" />
+    <Content Include="Scripts - Copy\ol\interaction\KeyboardZoom.js" />
+    <Content Include="Scripts - Copy\ol\interaction\Modify.js" />
+    <Content Include="Scripts - Copy\ol\interaction\MouseWheelZoom.js" />
+    <Content Include="Scripts - Copy\ol\interaction\PinchRotate.js" />
+    <Content Include="Scripts - Copy\ol\interaction\PinchZoom.js" />
+    <Content Include="Scripts - Copy\ol\interaction\Pointer.js" />
+    <Content Include="Scripts - Copy\ol\interaction\Property.js" />
+    <Content Include="Scripts - Copy\ol\interaction\Select.js" />
+    <Content Include="Scripts - Copy\ol\interaction\Snap.js" />
+    <Content Include="Scripts - Copy\ol\interaction\Translate.js" />
+    <Content Include="Scripts - Copy\ol\Kinetic.js" />
+    <Content Include="Scripts - Copy\ol\layer.js" />
+    <Content Include="Scripts - Copy\ol\layer\Base.js" />
+    <Content Include="Scripts - Copy\ol\layer\BaseImage.js" />
+    <Content Include="Scripts - Copy\ol\layer\BaseTile.js" />
+    <Content Include="Scripts - Copy\ol\layer\BaseVector.js" />
+    <Content Include="Scripts - Copy\ol\layer\Graticule.js" />
+    <Content Include="Scripts - Copy\ol\layer\Group.js" />
+    <Content Include="Scripts - Copy\ol\layer\Heatmap.js" />
+    <Content Include="Scripts - Copy\ol\layer\Image.js" />
+    <Content Include="Scripts - Copy\ol\layer\Layer.js" />
+    <Content Include="Scripts - Copy\ol\layer\MapboxVector.js" />
+    <Content Include="Scripts - Copy\ol\layer\Property.js" />
+    <Content Include="Scripts - Copy\ol\layer\Tile.js" />
+    <Content Include="Scripts - Copy\ol\layer\TileProperty.js" />
+    <Content Include="Scripts - Copy\ol\layer\Vector.js" />
+    <Content Include="Scripts - Copy\ol\layer\VectorImage.js" />
+    <Content Include="Scripts - Copy\ol\layer\VectorTile.js" />
+    <Content Include="Scripts - Copy\ol\layer\VectorTileRenderType.js" />
+    <Content Include="Scripts - Copy\ol\layer\WebGLPoints.js" />
+    <Content Include="Scripts - Copy\ol\layer\WebGLTile.js" />
+    <Content Include="Scripts - Copy\ol\loadingstrategy.js" />
+    <Content Include="Scripts - Copy\ol\Map.js" />
+    <Content Include="Scripts - Copy\ol\MapBrowserEvent.js" />
+    <Content Include="Scripts - Copy\ol\MapBrowserEventHandler.js" />
+    <Content Include="Scripts - Copy\ol\MapBrowserEventType.js" />
+    <Content Include="Scripts - Copy\ol\MapEvent.js" />
+    <Content Include="Scripts - Copy\ol\MapEventType.js" />
+    <Content Include="Scripts - Copy\ol\MapProperty.js" />
+    <Content Include="Scripts - Copy\ol\math.js" />
+    <Content Include="Scripts - Copy\ol\net.js" />
+    <Content Include="Scripts - Copy\ol\obj.js" />
+    <Content Include="Scripts - Copy\ol\Object.js" />
+    <Content Include="Scripts - Copy\ol\ObjectEventType.js" />
+    <Content Include="Scripts - Copy\ol\Observable.js" />
+    <Content Include="Scripts - Copy\ol\ol.css" />
+    <Content Include="Scripts - Copy\ol\Overlay.js" />
+    <Content Include="Scripts - Copy\ol\OverlayPositioning.js" />
+    <Content Include="Scripts - Copy\ol\pixel.js" />
+    <Content Include="Scripts - Copy\ol\PluggableMap.js" />
+    <Content Include="Scripts - Copy\ol\pointer\EventType.js" />
+    <Content Include="Scripts - Copy\ol\proj.js" />
+    <Content Include="Scripts - Copy\ol\proj\epsg3857.js" />
+    <Content Include="Scripts - Copy\ol\proj\epsg4326.js" />
+    <Content Include="Scripts - Copy\ol\proj\proj4.js" />
+    <Content Include="Scripts - Copy\ol\proj\Projection.js" />
+    <Content Include="Scripts - Copy\ol\proj\projections.js" />
+    <Content Include="Scripts - Copy\ol\proj\transforms.js" />
+    <Content Include="Scripts - Copy\ol\proj\Units.js" />
+    <Content Include="Scripts - Copy\ol\render.js" />
+    <Content Include="Scripts - Copy\ol\renderer\canvas\ImageLayer.js" />
+    <Content Include="Scripts - Copy\ol\renderer\canvas\Layer.js" />
+    <Content Include="Scripts - Copy\ol\renderer\canvas\TileLayer.js" />
+    <Content Include="Scripts - Copy\ol\renderer\canvas\VectorImageLayer.js" />
+    <Content Include="Scripts - Copy\ol\renderer\canvas\VectorLayer.js" />
+    <Content Include="Scripts - Copy\ol\renderer\canvas\VectorTileLayer.js" />
+    <Content Include="Scripts - Copy\ol\renderer\Composite.js" />
+    <Content Include="Scripts - Copy\ol\renderer\Layer.js" />
+    <Content Include="Scripts - Copy\ol\renderer\Map.js" />
+    <Content Include="Scripts - Copy\ol\renderer\vector.js" />
+    <Content Include="Scripts - Copy\ol\renderer\webgl\Layer.js" />
+    <Content Include="Scripts - Copy\ol\renderer\webgl\PointsLayer.js" />
+    <Content Include="Scripts - Copy\ol\renderer\webgl\TileLayer.js" />
+    <Content Include="Scripts - Copy\ol\render\Box.js" />
+    <Content Include="Scripts - Copy\ol\render\canvas.js" />
+    <Content Include="Scripts - Copy\ol\render\canvas\Builder.js" />
+    <Content Include="Scripts - Copy\ol\render\canvas\BuilderGroup.js" />
+    <Content Include="Scripts - Copy\ol\render\canvas\BuilderType.js" />
+    <Content Include="Scripts - Copy\ol\render\canvas\Executor.js" />
+    <Content Include="Scripts - Copy\ol\render\canvas\ExecutorGroup.js" />
+    <Content Include="Scripts - Copy\ol\render\canvas\hitdetect.js" />
+    <Content Include="Scripts - Copy\ol\render\canvas\ImageBuilder.js" />
+    <Content Include="Scripts - Copy\ol\render\canvas\Immediate.js" />
+    <Content Include="Scripts - Copy\ol\render\canvas\Instruction.js" />
+    <Content Include="Scripts - Copy\ol\render\canvas\LineStringBuilder.js" />
+    <Content Include="Scripts - Copy\ol\render\canvas\PolygonBuilder.js" />
+    <Content Include="Scripts - Copy\ol\render\canvas\TextBuilder.js" />
+    <Content Include="Scripts - Copy\ol\render\Event.js" />
+    <Content Include="Scripts - Copy\ol\render\EventType.js" />
+    <Content Include="Scripts - Copy\ol\render\Feature.js" />
+    <Content Include="Scripts - Copy\ol\render\VectorContext.js" />
+    <Content Include="Scripts - Copy\ol\reproj.js" />
+    <Content Include="Scripts - Copy\ol\reproj\common.js" />
+    <Content Include="Scripts - Copy\ol\reproj\Image.js" />
+    <Content Include="Scripts - Copy\ol\reproj\Tile.js" />
+    <Content Include="Scripts - Copy\ol\reproj\Triangulation.js" />
+    <Content Include="Scripts - Copy\ol\resolutionconstraint.js" />
+    <Content Include="Scripts - Copy\ol\rotationconstraint.js" />
+    <Content Include="Scripts - Copy\ol\size.js" />
+    <Content Include="Scripts - Copy\ol\source.js" />
+    <Content Include="Scripts - Copy\ol\source\BingMaps.js" />
+    <Content Include="Scripts - Copy\ol\source\CartoDB.js" />
+    <Content Include="Scripts - Copy\ol\source\Cluster.js" />
+    <Content Include="Scripts - Copy\ol\source\common.js" />
+    <Content Include="Scripts - Copy\ol\source\DataTile.js" />
+    <Content Include="Scripts - Copy\ol\source\GeoTIFF.js" />
+    <Content Include="Scripts - Copy\ol\source\IIIF.js" />
+    <Content Include="Scripts - Copy\ol\source\Image.js" />
+    <Content Include="Scripts - Copy\ol\source\ImageArcGISRest.js" />
+    <Content Include="Scripts - Copy\ol\source\ImageCanvas.js" />
+    <Content Include="Scripts - Copy\ol\source\ImageMapGuide.js" />
+    <Content Include="Scripts - Copy\ol\source\ImageStatic.js" />
+    <Content Include="Scripts - Copy\ol\source\ImageWMS.js" />
+    <Content Include="Scripts - Copy\ol\source\OGCMapTile.js" />
+    <Content Include="Scripts - Copy\ol\source\ogcTileUtil.js" />
+    <Content Include="Scripts - Copy\ol\source\OGCVectorTile.js" />
+    <Content Include="Scripts - Copy\ol\source\OSM.js" />
+    <Content Include="Scripts - Copy\ol\source\Raster.js" />
+    <Content Include="Scripts - Copy\ol\source\Source.js" />
+    <Content Include="Scripts - Copy\ol\source\Stamen.js" />
+    <Content Include="Scripts - Copy\ol\source\State.js" />
+    <Content Include="Scripts - Copy\ol\source\Tile.js" />
+    <Content Include="Scripts - Copy\ol\source\TileArcGISRest.js" />
+    <Content Include="Scripts - Copy\ol\source\TileDebug.js" />
+    <Content Include="Scripts - Copy\ol\source\TileEventType.js" />
+    <Content Include="Scripts - Copy\ol\source\TileImage.js" />
+    <Content Include="Scripts - Copy\ol\source\TileJSON.js" />
+    <Content Include="Scripts - Copy\ol\source\TileWMS.js" />
+    <Content Include="Scripts - Copy\ol\source\UrlTile.js" />
+    <Content Include="Scripts - Copy\ol\source\UTFGrid.js" />
+    <Content Include="Scripts - Copy\ol\source\Vector.js" />
+    <Content Include="Scripts - Copy\ol\source\VectorEventType.js" />
+    <Content Include="Scripts - Copy\ol\source\VectorTile.js" />
+    <Content Include="Scripts - Copy\ol\source\WMSServerType.js" />
+    <Content Include="Scripts - Copy\ol\source\WMTS.js" />
+    <Content Include="Scripts - Copy\ol\source\WMTSRequestEncoding.js" />
+    <Content Include="Scripts - Copy\ol\source\XYZ.js" />
+    <Content Include="Scripts - Copy\ol\source\Zoomify.js" />
+    <Content Include="Scripts - Copy\ol\sphere.js" />
+    <Content Include="Scripts - Copy\ol\string.js" />
+    <Content Include="Scripts - Copy\ol\structs\LinkedList.js" />
+    <Content Include="Scripts - Copy\ol\structs\LRUCache.js" />
+    <Content Include="Scripts - Copy\ol\structs\PriorityQueue.js" />
+    <Content Include="Scripts - Copy\ol\structs\RBush.js" />
+    <Content Include="Scripts - Copy\ol\style.js" />
+    <Content Include="Scripts - Copy\ol\style\Circle.js" />
+    <Content Include="Scripts - Copy\ol\style\expressions.js" />
+    <Content Include="Scripts - Copy\ol\style\Fill.js" />
+    <Content Include="Scripts - Copy\ol\style\Icon.js" />
+    <Content Include="Scripts - Copy\ol\style\IconAnchorUnits.js" />
+    <Content Include="Scripts - Copy\ol\style\IconImage.js" />
+    <Content Include="Scripts - Copy\ol\style\IconImageCache.js" />
+    <Content Include="Scripts - Copy\ol\style\IconOrigin.js" />
+    <Content Include="Scripts - Copy\ol\style\Image.js" />
+    <Content Include="Scripts - Copy\ol\style\literal.js" />
+    <Content Include="Scripts - Copy\ol\style\RegularShape.js" />
+    <Content Include="Scripts - Copy\ol\style\Stroke.js" />
+    <Content Include="Scripts - Copy\ol\style\Style.js" />
+    <Content Include="Scripts - Copy\ol\style\Text.js" />
+    <Content Include="Scripts - Copy\ol\style\TextPlacement.js" />
+    <Content Include="Scripts - Copy\ol\Tile.js" />
+    <Content Include="Scripts - Copy\ol\TileCache.js" />
+    <Content Include="Scripts - Copy\ol\tilecoord.js" />
+    <Content Include="Scripts - Copy\ol\tilegrid.js" />
+    <Content Include="Scripts - Copy\ol\tilegrid\common.js" />
+    <Content Include="Scripts - Copy\ol\tilegrid\TileGrid.js" />
+    <Content Include="Scripts - Copy\ol\tilegrid\WMTS.js" />
+    <Content Include="Scripts - Copy\ol\TileQueue.js" />
+    <Content Include="Scripts - Copy\ol\TileRange.js" />
+    <Content Include="Scripts - Copy\ol\TileState.js" />
+    <Content Include="Scripts - Copy\ol\tileurlfunction.js" />
+    <Content Include="Scripts - Copy\ol\transform.js" />
+    <Content Include="Scripts - Copy\ol\uri.js" />
+    <Content Include="Scripts - Copy\ol\util.js" />
+    <Content Include="Scripts - Copy\ol\VectorRenderTile.js" />
+    <Content Include="Scripts - Copy\ol\VectorTile.js" />
+    <Content Include="Scripts - Copy\ol\vec\mat4.js" />
+    <Content Include="Scripts - Copy\ol\View.js" />
+    <Content Include="Scripts - Copy\ol\ViewHint.js" />
+    <Content Include="Scripts - Copy\ol\ViewProperty.js" />
+    <Content Include="Scripts - Copy\ol\webgl.js" />
+    <Content Include="Scripts - Copy\ol\webgl\Buffer.js" />
+    <Content Include="Scripts - Copy\ol\webgl\ContextEventType.js" />
+    <Content Include="Scripts - Copy\ol\webgl\Helper.js" />
+    <Content Include="Scripts - Copy\ol\webgl\PostProcessingPass.js" />
+    <Content Include="Scripts - Copy\ol\webgl\RenderTarget.js" />
+    <Content Include="Scripts - Copy\ol\webgl\ShaderBuilder.js" />
+    <Content Include="Scripts - Copy\ol\webgl\TileTexture.js" />
+    <Content Include="Scripts - Copy\ol\worker\geotiff-decoder.js" />
+    <Content Include="Scripts - Copy\ol\worker\version.js" />
+    <Content Include="Scripts - Copy\ol\worker\webgl.js" />
+    <Content Include="Scripts - Copy\ol\xml.js" />
+    <Content Include="Scripts - Copy\persian-date.js" />
+    <Content Include="Scripts - Copy\persian-datepicker.js" />
+    <Content Include="Scripts - Copy\popper.min.js" />
+    <Content Include="Scripts - Copy\recorder.js" />
+    <Content Include="Scripts - Copy\select2.min.js" />
+    <Content Include="Scripts - Copy\Test.js" />
+    <Content Include="Scripts - Copy\turf.min.js" />
+    <Content Include="Scripts\blackspot.js" />
+    <Content Include="Scripts\jquery-3.6.0.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.min.js" />
+    <Content Include="Scripts\Test.js" />
+    <Content Include="tempSabet.txt" />
+    <Content Include="Moderator\UploadData.aspx" />
+    <Content Include="Moderator\User\AddPoliceStation.aspx" />
+    <Content Include="Moderator\User\AddUser.aspx" />
+    <Content Include="Moderator\User\Plans.aspx" />
+    <Content Include="Moderator\User\PoliceStationList.aspx" />
+    <Content Include="Moderator\User\UserInfo.aspx" />
+    <Content Include="Moderator\User\UserList.aspx" />
+    <Content Include="RecoveryPassword.aspx" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\bootstrap-clockpicker.min.js" />
+    <Content Include="Scripts\bootstrap-treeview.min.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\chart.min.js" />
+    <Content Include="Scripts\chartjs-plugin-datalabels.js" />
+    <Content Include="Scripts\chartjs-plugin-datalabels.min.js" />
+    <Content Include="Scripts\chartjs\chartjs-adapter-luxon%401.0.0.js" />
+    <Content Include="Scripts\chartjs\chartjs-chart-financial.js" />
+    <Content Include="Scripts\chartjs\chartjs-plugin-piechart-outlabels.min.js" />
+    <Content Include="Scripts\chartjs\luxon%401.26.0.js" />
+    <Content Include="Scripts\chartjs\utils.js" />
+    <Content Include="Scripts\compressor.min.js" />
+    <Content Include="Scripts\dropzone-min.js" />
+    <Content Include="Scripts\fontawesome.min.js" />
+    <Content Include="Scripts\grouped-categories.js" />
+    <Content Include="Scripts\highcharts-accessibility.js" />
+    <Content Include="Scripts\highcharts-coloraxis.js" />
+    <Content Include="Scripts\highcharts-highstock.js" />
+    <Content Include="Scripts\highcharts-more.js" />
+    <Content Include="Scripts\highcharts.js" />
+    <Content Include="Scripts\html2canvas.min.js" />
+    <Content Include="Scripts\jalali-moment.browser.js" />
+    <Content Include="Scripts\jquery-clockpicker.min.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.inlineStyler.min.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.md.bootstrap.datetimepicker.js" />
+    <Content Include="Scripts\jquery.md.bootstrap.datetimepicker.min.js" />
+    <Content Include="Scripts\js.map.city.js" />
+    <Content Include="Scripts\js.map.select.city.js" />
+    <Content Include="Scripts\jsAccidentHelper.js" />
+    <Content Include="Scripts\jsAccidentListHelper.js" />
+    <Content Include="Scripts\jsAccidentMapHelper.js" />
+    <Content Include="Scripts\jsAlertHelper.js" />
+    <Content Include="Scripts\jsCauseAudio.js" />
+    <Content Include="Scripts\jsCheckAccidentHelper.js" />
+    <Content Include="Scripts\jsConvertNumberHelper.js" />
+    <Content Include="Scripts\jsDashboadMapHelper.js" />
+    <Content Include="Scripts\jsEventProcessHelper.js" />
+    <Content Include="Scripts\jsExplanationAudio.js" />
+    <Content Include="Scripts\jsFirstViewHelper.js" />
+    <Content Include="Scripts\jsFsType.js" />
+    <Content Include="Scripts\jsHeatMapHelper.js" />
+    <Content Include="Scripts\jsHelper.js" />
+    <Content Include="Scripts\jsLocationAnalysisHelper.js" />
+    <Content Include="Scripts\jsLocationAnalysisMapHelper.js" />
+    <Content Include="Scripts\jsLocationComparisonFilter.js" />
+    <Content Include="Scripts\jsLocationComparisonHelper.js" />
+    <Content Include="Scripts\jsLocationComparisonHelperMap.js" />
+    <Content Include="Scripts\jsMasterModeratorHelper.js" />
+    <Content Include="Scripts\jsModalHelper.js" />
+    <Content Include="Scripts\jsNationalIdChecker.js" />
+    <Content Include="Scripts\jspdf.debug.js" />
+    <Content Include="Scripts\jspdf.umd.min.js" />
+    <Content Include="Scripts\jsSafetyIndexMapHelper.js" />
+    <Content Include="Scripts\jstat.min.js" />
+    <Content Include="Scripts\jsTimeAnalysisHelper.js" />
+    <Content Include="Scripts\jsTimeComparisonHelper - Copy.js" />
+    <Content Include="Scripts\jsTimeComparisonHelper.js" />
+    <Content Include="Scripts\jsToastHelper.js" />
+    <Content Include="Scripts\leaflet.ajax.min.js" />
+    <Content Include="Scripts\leaflet\images\layers-2x.png" />
+    <Content Include="Scripts\leaflet\images\layers.png" />
+    <Content Include="Scripts\leaflet\images\marker-icon-2x.png" />
+    <Content Include="Scripts\leaflet\images\marker-icon.png" />
+    <Content Include="Scripts\leaflet\images\marker-shadow.png" />
+    <Content Include="Scripts\leaflet\leaflet-canvasicon.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\Control.Draw.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\copyright.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\draw\DrawToolbar.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\draw\handler\Draw.Circle.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\draw\handler\Draw.CircleMarker.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\draw\handler\Draw.Feature.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\draw\handler\Draw.Marker.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\draw\handler\Draw.Polygon.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\draw\handler\Draw.Polyline.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\draw\handler\Draw.Rectangle.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\draw\handler\Draw.SimpleShape.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\edit\EditToolbar.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\edit\handler\Edit.Circle.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\edit\handler\Edit.CircleMarker.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\edit\handler\Edit.Marker.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\edit\handler\Edit.Poly.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\edit\handler\Edit.Rectangle.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\edit\handler\Edit.SimpleShape.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\edit\handler\EditToolbar.Delete.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\edit\handler\EditToolbar.Edit.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\ext\GeometryUtil.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\ext\LatLngUtil.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\ext\LineUtil.Intersect.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\ext\Polygon.Intersect.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\ext\Polyline.Intersect.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\ext\TouchEvents.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\images\spritesheet-2x.png" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\images\spritesheet.png" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\images\spritesheet.svg" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\leaflet.draw.css" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\Leaflet.Draw.Event.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\Leaflet.draw.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\Toolbar.js" />
+    <Content Include="Scripts\leaflet\Leaflet-draw\Tooltip.js" />
+    <Content Include="Scripts\leaflet\leaflet-geodesy.js" />
+    <Content Include="Scripts\leaflet\leaflet-geoman.min.js" />
+    <Content Include="Scripts\leaflet\leaflet-heat.js" />
+    <Content Include="Scripts\leaflet\leaflet-locatecontrol\L.Control.Locate.css" />
+    <Content Include="Scripts\leaflet\leaflet-locatecontrol\L.Control.Locate.mapbox.css" />
+    <Content Include="Scripts\leaflet\leaflet-locatecontrol\L.Control.Locate.mapbox.min.css" />
+    <Content Include="Scripts\leaflet\leaflet-locatecontrol\L.Control.Locate.min.css" />
+    <Content Include="Scripts\leaflet\leaflet-locatecontrol\L.Control.Locate.min.js" />
+    <Content Include="Scripts\leaflet\leaflet-piechart.js" />
+    <Content Include="Scripts\leaflet\leaflet-rotate-src.js" />
+    <Content Include="Scripts\leaflet\leaflet-src.esm.js" />
+    <Content Include="Scripts\leaflet\leaflet-src.js" />
+    <Content Include="Scripts\leaflet\leaflet-transparency.js" />
+    <Content Include="Scripts\leaflet\leaflet.ajax.min.js" />
+    <Content Include="Scripts\leaflet\leaflet.circle.topolygon-src.min.js" />
+    <Content Include="Scripts\leaflet\leaflet.css" />
+    <Content Include="Scripts\leaflet\leaflet.js" />
+    <Content Include="Scripts\leaflet\location-arrow-solid.svg" />
+    <Content Include="Scripts\leaflet\spinner-solid.svg" />
+    <Content Include="Scripts\loading-bar.min.js" />
+    <Content Include="Scripts\localization\messages_fa.min.js" />
+    <Content Include="Scripts\mapbox\mapbox-gl-draw.css" />
+    <Content Include="Scripts\mapbox\mapbox-gl-draw.js" />
+    <Content Include="Scripts\mapbox\mapbox-gl.css" />
+    <Content Include="Scripts\mapbox\mapbox-gl.js" />
+    <Content Include="Scripts\material.min.js" />
+    <Content Include="Scripts\ol\array.js" />
+    <Content Include="Scripts\ol\AssertionError.js" />
+    <Content Include="Scripts\ol\asserts.js" />
+    <Content Include="Scripts\ol\centerconstraint.js" />
+    <Content Include="Scripts\ol\Collection.js" />
+    <Content Include="Scripts\ol\CollectionEventType.js" />
+    <Content Include="Scripts\ol\color.js" />
+    <Content Include="Scripts\ol\colorlike.js" />
+    <Content Include="Scripts\ol\control.js" />
+    <Content Include="Scripts\ol\control\Attribution.js" />
+    <Content Include="Scripts\ol\control\Control.js" />
+    <Content Include="Scripts\ol\control\FullScreen.js" />
+    <Content Include="Scripts\ol\control\MousePosition.js" />
+    <Content Include="Scripts\ol\control\OverviewMap.js" />
+    <Content Include="Scripts\ol\control\Rotate.js" />
+    <Content Include="Scripts\ol\control\ScaleLine.js" />
+    <Content Include="Scripts\ol\control\Zoom.js" />
+    <Content Include="Scripts\ol\control\ZoomSlider.js" />
+    <Content Include="Scripts\ol\control\ZoomToExtent.js" />
+    <Content Include="Scripts\ol\coordinate.js" />
+    <Content Include="Scripts\ol\css.js" />
+    <Content Include="Scripts\ol\DataTile.js" />
+    <Content Include="Scripts\ol\Disposable.js" />
+    <Content Include="Scripts\ol\dom.js" />
+    <Content Include="Scripts\ol\easing.js" />
+    <Content Include="Scripts\ol\events.js" />
+    <Content Include="Scripts\ol\events\condition.js" />
+    <Content Include="Scripts\ol\events\Event.js" />
+    <Content Include="Scripts\ol\events\EventType.js" />
+    <Content Include="Scripts\ol\events\KeyCode.js" />
+    <Content Include="Scripts\ol\events\Target.js" />
+    <Content Include="Scripts\ol\extent.js" />
+    <Content Include="Scripts\ol\extent\Corner.js" />
+    <Content Include="Scripts\ol\extent\Relationship.js" />
+    <Content Include="Scripts\ol\Feature.js" />
+    <Content Include="Scripts\ol\featureloader.js" />
+    <Content Include="Scripts\ol\format.js" />
+    <Content Include="Scripts\ol\format\EsriJSON.js" />
+    <Content Include="Scripts\ol\format\Feature.js" />
+    <Content Include="Scripts\ol\format\filter.js" />
+    <Content Include="Scripts\ol\format\filter\And.js" />
+    <Content Include="Scripts\ol\format\filter\Bbox.js" />
+    <Content Include="Scripts\ol\format\filter\Comparison.js" />
+    <Content Include="Scripts\ol\format\filter\ComparisonBinary.js" />
+    <Content Include="Scripts\ol\format\filter\Contains.js" />
+    <Content Include="Scripts\ol\format\filter\Disjoint.js" />
+    <Content Include="Scripts\ol\format\filter\During.js" />
+    <Content Include="Scripts\ol\format\filter\DWithin.js" />
+    <Content Include="Scripts\ol\format\filter\EqualTo.js" />
+    <Content Include="Scripts\ol\format\filter\Filter.js" />
+    <Content Include="Scripts\ol\format\filter\GreaterThan.js" />
+    <Content Include="Scripts\ol\format\filter\GreaterThanOrEqualTo.js" />
+    <Content Include="Scripts\ol\format\filter\Intersects.js" />
+    <Content Include="Scripts\ol\format\filter\IsBetween.js" />
+    <Content Include="Scripts\ol\format\filter\IsLike.js" />
+    <Content Include="Scripts\ol\format\filter\IsNull.js" />
+    <Content Include="Scripts\ol\format\filter\LessThan.js" />
+    <Content Include="Scripts\ol\format\filter\LessThanOrEqualTo.js" />
+    <Content Include="Scripts\ol\format\filter\LogicalNary.js" />
+    <Content Include="Scripts\ol\format\filter\Not.js" />
+    <Content Include="Scripts\ol\format\filter\NotEqualTo.js" />
+    <Content Include="Scripts\ol\format\filter\Or.js" />
+    <Content Include="Scripts\ol\format\filter\ResourceId.js" />
+    <Content Include="Scripts\ol\format\filter\Spatial.js" />
+    <Content Include="Scripts\ol\format\filter\Within.js" />
+    <Content Include="Scripts\ol\format\FormatType.js" />
+    <Content Include="Scripts\ol\format\GeoJSON.js" />
+    <Content Include="Scripts\ol\format\GML.js" />
+    <Content Include="Scripts\ol\format\GML2.js" />
+    <Content Include="Scripts\ol\format\GML3.js" />
+    <Content Include="Scripts\ol\format\GML32.js" />
+    <Content Include="Scripts\ol\format\GMLBase.js" />
+    <Content Include="Scripts\ol\format\GPX.js" />
+    <Content Include="Scripts\ol\format\IGC.js" />
+    <Content Include="Scripts\ol\format\IIIFInfo.js" />
+    <Content Include="Scripts\ol\format\JSONFeature.js" />
+    <Content Include="Scripts\ol\format\KML.js" />
+    <Content Include="Scripts\ol\format\MVT.js" />
+    <Content Include="Scripts\ol\format\OSMXML.js" />
+    <Content Include="Scripts\ol\format\OWS.js" />
+    <Content Include="Scripts\ol\format\Polyline.js" />
+    <Content Include="Scripts\ol\format\TextFeature.js" />
+    <Content Include="Scripts\ol\format\TopoJSON.js" />
+    <Content Include="Scripts\ol\format\WFS.js" />
+    <Content Include="Scripts\ol\format\WKB.js" />
+    <Content Include="Scripts\ol\format\WKT.js" />
+    <Content Include="Scripts\ol\format\WMSCapabilities.js" />
+    <Content Include="Scripts\ol\format\WMSGetFeatureInfo.js" />
+    <Content Include="Scripts\ol\format\WMTSCapabilities.js" />
+    <Content Include="Scripts\ol\format\xlink.js" />
+    <Content Include="Scripts\ol\format\XML.js" />
+    <Content Include="Scripts\ol\format\XMLFeature.js" />
+    <Content Include="Scripts\ol\format\xsd.js" />
+    <Content Include="Scripts\ol\functions.js" />
+    <Content Include="Scripts\ol\Geolocation.js" />
+    <Content Include="Scripts\ol\geom.js" />
+    <Content Include="Scripts\ol\geom\Circle.js" />
+    <Content Include="Scripts\ol\geom\flat\area.js" />
+    <Content Include="Scripts\ol\geom\flat\center.js" />
+    <Content Include="Scripts\ol\geom\flat\closest.js" />
+    <Content Include="Scripts\ol\geom\flat\contains.js" />
+    <Content Include="Scripts\ol\geom\flat\deflate.js" />
+    <Content Include="Scripts\ol\geom\flat\flip.js" />
+    <Content Include="Scripts\ol\geom\flat\geodesic.js" />
+    <Content Include="Scripts\ol\geom\flat\inflate.js" />
+    <Content Include="Scripts\ol\geom\flat\interiorpoint.js" />
+    <Content Include="Scripts\ol\geom\flat\interpolate.js" />
+    <Content Include="Scripts\ol\geom\flat\intersectsextent.js" />
+    <Content Include="Scripts\ol\geom\flat\length.js" />
+    <Content Include="Scripts\ol\geom\flat\orient.js" />
+    <Content Include="Scripts\ol\geom\flat\reverse.js" />
+    <Content Include="Scripts\ol\geom\flat\segments.js" />
+    <Content Include="Scripts\ol\geom\flat\simplify.js" />
+    <Content Include="Scripts\ol\geom\flat\straightchunk.js" />
+    <Content Include="Scripts\ol\geom\flat\textpath.js" />
+    <Content Include="Scripts\ol\geom\flat\topology.js" />
+    <Content Include="Scripts\ol\geom\flat\transform.js" />
+    <Content Include="Scripts\ol\geom\Geometry.js" />
+    <Content Include="Scripts\ol\geom\GeometryCollection.js" />
+    <Content Include="Scripts\ol\geom\GeometryLayout.js" />
+    <Content Include="Scripts\ol\geom\GeometryType.js" />
+    <Content Include="Scripts\ol\geom\LinearRing.js" />
+    <Content Include="Scripts\ol\geom\LineString.js" />
+    <Content Include="Scripts\ol\geom\MultiLineString.js" />
+    <Content Include="Scripts\ol\geom\MultiPoint.js" />
+    <Content Include="Scripts\ol\geom\MultiPolygon.js" />
+    <Content Include="Scripts\ol\geom\Point.js" />
+    <Content Include="Scripts\ol\geom\Polygon.js" />
+    <Content Include="Scripts\ol\geom\SimpleGeometry.js" />
+    <Content Include="Scripts\ol\has.js" />
+    <Content Include="Scripts\ol\Image.js" />
+    <Content Include="Scripts\ol\ImageBase.js" />
+    <Content Include="Scripts\ol\ImageCanvas.js" />
+    <Content Include="Scripts\ol\ImageState.js" />
+    <Content Include="Scripts\ol\ImageTile.js" />
+    <Content Include="Scripts\ol\index.js" />
+    <Content Include="Scripts\ol\interaction.js" />
+    <Content Include="Scripts\ol\interaction\DoubleClickZoom.js" />
+    <Content Include="Scripts\ol\interaction\DragAndDrop.js" />
+    <Content Include="Scripts\ol\interaction\DragBox.js" />
+    <Content Include="Scripts\ol\interaction\DragPan.js" />
+    <Content Include="Scripts\ol\interaction\DragRotate.js" />
+    <Content Include="Scripts\ol\interaction\DragRotateAndZoom.js" />
+    <Content Include="Scripts\ol\interaction\DragZoom.js" />
+    <Content Include="Scripts\ol\interaction\Draw.js" />
+    <Content Include="Scripts\ol\interaction\Extent.js" />
+    <Content Include="Scripts\ol\interaction\Interaction.js" />
+    <Content Include="Scripts\ol\interaction\KeyboardPan.js" />
+    <Content Include="Scripts\ol\interaction\KeyboardZoom.js" />
+    <Content Include="Scripts\ol\interaction\Modify.js" />
+    <Content Include="Scripts\ol\interaction\MouseWheelZoom.js" />
+    <Content Include="Scripts\ol\interaction\PinchRotate.js" />
+    <Content Include="Scripts\ol\interaction\PinchZoom.js" />
+    <Content Include="Scripts\ol\interaction\Pointer.js" />
+    <Content Include="Scripts\ol\interaction\Property.js" />
+    <Content Include="Scripts\ol\interaction\Select.js" />
+    <Content Include="Scripts\ol\interaction\Snap.js" />
+    <Content Include="Scripts\ol\interaction\Translate.js" />
+    <Content Include="Scripts\ol\Kinetic.js" />
+    <Content Include="Scripts\ol\layer.js" />
+    <Content Include="Scripts\ol\layer\Base.js" />
+    <Content Include="Scripts\ol\layer\BaseImage.js" />
+    <Content Include="Scripts\ol\layer\BaseTile.js" />
+    <Content Include="Scripts\ol\layer\BaseVector.js" />
+    <Content Include="Scripts\ol\layer\Graticule.js" />
+    <Content Include="Scripts\ol\layer\Group.js" />
+    <Content Include="Scripts\ol\layer\Heatmap.js" />
+    <Content Include="Scripts\ol\layer\Image.js" />
+    <Content Include="Scripts\ol\layer\Layer.js" />
+    <Content Include="Scripts\ol\layer\MapboxVector.js" />
+    <Content Include="Scripts\ol\layer\Property.js" />
+    <Content Include="Scripts\ol\layer\Tile.js" />
+    <Content Include="Scripts\ol\layer\TileProperty.js" />
+    <Content Include="Scripts\ol\layer\Vector.js" />
+    <Content Include="Scripts\ol\layer\VectorImage.js" />
+    <Content Include="Scripts\ol\layer\VectorTile.js" />
+    <Content Include="Scripts\ol\layer\VectorTileRenderType.js" />
+    <Content Include="Scripts\ol\layer\WebGLPoints.js" />
+    <Content Include="Scripts\ol\layer\WebGLTile.js" />
+    <Content Include="Scripts\ol\loadingstrategy.js" />
+    <Content Include="Scripts\ol\Map.js" />
+    <Content Include="Scripts\ol\MapBrowserEvent.js" />
+    <Content Include="Scripts\ol\MapBrowserEventHandler.js" />
+    <Content Include="Scripts\ol\MapBrowserEventType.js" />
+    <Content Include="Scripts\ol\MapEvent.js" />
+    <Content Include="Scripts\ol\MapEventType.js" />
+    <Content Include="Scripts\ol\MapProperty.js" />
+    <Content Include="Scripts\ol\math.js" />
+    <Content Include="Scripts\ol\net.js" />
+    <Content Include="Scripts\ol\obj.js" />
+    <Content Include="Scripts\ol\Object.js" />
+    <Content Include="Scripts\ol\ObjectEventType.js" />
+    <Content Include="Scripts\ol\Observable.js" />
+    <Content Include="Scripts\ol\ol.css" />
+    <Content Include="Scripts\ol\Overlay.js" />
+    <Content Include="Scripts\ol\OverlayPositioning.js" />
+    <Content Include="Scripts\ol\pixel.js" />
+    <Content Include="Scripts\ol\PluggableMap.js" />
+    <Content Include="Scripts\ol\pointer\EventType.js" />
+    <Content Include="Scripts\ol\proj.js" />
+    <Content Include="Scripts\ol\proj\epsg3857.js" />
+    <Content Include="Scripts\ol\proj\epsg4326.js" />
+    <Content Include="Scripts\ol\proj\proj4.js" />
+    <Content Include="Scripts\ol\proj\Projection.js" />
+    <Content Include="Scripts\ol\proj\projections.js" />
+    <Content Include="Scripts\ol\proj\transforms.js" />
+    <Content Include="Scripts\ol\proj\Units.js" />
+    <Content Include="Scripts\ol\render.js" />
+    <Content Include="Scripts\ol\renderer\canvas\ImageLayer.js" />
+    <Content Include="Scripts\ol\renderer\canvas\Layer.js" />
+    <Content Include="Scripts\ol\renderer\canvas\TileLayer.js" />
+    <Content Include="Scripts\ol\renderer\canvas\VectorImageLayer.js" />
+    <Content Include="Scripts\ol\renderer\canvas\VectorLayer.js" />
+    <Content Include="Scripts\ol\renderer\canvas\VectorTileLayer.js" />
+    <Content Include="Scripts\ol\renderer\Composite.js" />
+    <Content Include="Scripts\ol\renderer\Layer.js" />
+    <Content Include="Scripts\ol\renderer\Map.js" />
+    <Content Include="Scripts\ol\renderer\vector.js" />
+    <Content Include="Scripts\ol\renderer\webgl\Layer.js" />
+    <Content Include="Scripts\ol\renderer\webgl\PointsLayer.js" />
+    <Content Include="Scripts\ol\renderer\webgl\TileLayer.js" />
+    <Content Include="Scripts\ol\render\Box.js" />
+    <Content Include="Scripts\ol\render\canvas.js" />
+    <Content Include="Scripts\ol\render\canvas\Builder.js" />
+    <Content Include="Scripts\ol\render\canvas\BuilderGroup.js" />
+    <Content Include="Scripts\ol\render\canvas\BuilderType.js" />
+    <Content Include="Scripts\ol\render\canvas\Executor.js" />
+    <Content Include="Scripts\ol\render\canvas\ExecutorGroup.js" />
+    <Content Include="Scripts\ol\render\canvas\hitdetect.js" />
+    <Content Include="Scripts\ol\render\canvas\ImageBuilder.js" />
+    <Content Include="Scripts\ol\render\canvas\Immediate.js" />
+    <Content Include="Scripts\ol\render\canvas\Instruction.js" />
+    <Content Include="Scripts\ol\render\canvas\LineStringBuilder.js" />
+    <Content Include="Scripts\ol\render\canvas\PolygonBuilder.js" />
+    <Content Include="Scripts\ol\render\canvas\TextBuilder.js" />
+    <Content Include="Scripts\ol\render\Event.js" />
+    <Content Include="Scripts\ol\render\EventType.js" />
+    <Content Include="Scripts\ol\render\Feature.js" />
+    <Content Include="Scripts\ol\render\VectorContext.js" />
+    <Content Include="Scripts\ol\reproj.js" />
+    <Content Include="Scripts\ol\reproj\common.js" />
+    <Content Include="Scripts\ol\reproj\Image.js" />
+    <Content Include="Scripts\ol\reproj\Tile.js" />
+    <Content Include="Scripts\ol\reproj\Triangulation.js" />
+    <Content Include="Scripts\ol\resolutionconstraint.js" />
+    <Content Include="Scripts\ol\rotationconstraint.js" />
+    <Content Include="Scripts\ol\size.js" />
+    <Content Include="Scripts\ol\source.js" />
+    <Content Include="Scripts\ol\source\BingMaps.js" />
+    <Content Include="Scripts\ol\source\CartoDB.js" />
+    <Content Include="Scripts\ol\source\Cluster.js" />
+    <Content Include="Scripts\ol\source\common.js" />
+    <Content Include="Scripts\ol\source\DataTile.js" />
+    <Content Include="Scripts\ol\source\GeoTIFF.js" />
+    <Content Include="Scripts\ol\source\IIIF.js" />
+    <Content Include="Scripts\ol\source\Image.js" />
+    <Content Include="Scripts\ol\source\ImageArcGISRest.js" />
+    <Content Include="Scripts\ol\source\ImageCanvas.js" />
+    <Content Include="Scripts\ol\source\ImageMapGuide.js" />
+    <Content Include="Scripts\ol\source\ImageStatic.js" />
+    <Content Include="Scripts\ol\source\ImageWMS.js" />
+    <Content Include="Scripts\ol\source\OGCMapTile.js" />
+    <Content Include="Scripts\ol\source\ogcTileUtil.js" />
+    <Content Include="Scripts\ol\source\OGCVectorTile.js" />
+    <Content Include="Scripts\ol\source\OSM.js" />
+    <Content Include="Scripts\ol\source\Raster.js" />
+    <Content Include="Scripts\ol\source\Source.js" />
+    <Content Include="Scripts\ol\source\Stamen.js" />
+    <Content Include="Scripts\ol\source\State.js" />
+    <Content Include="Scripts\ol\source\Tile.js" />
+    <Content Include="Scripts\ol\source\TileArcGISRest.js" />
+    <Content Include="Scripts\ol\source\TileDebug.js" />
+    <Content Include="Scripts\ol\source\TileEventType.js" />
+    <Content Include="Scripts\ol\source\TileImage.js" />
+    <Content Include="Scripts\ol\source\TileJSON.js" />
+    <Content Include="Scripts\ol\source\TileWMS.js" />
+    <Content Include="Scripts\ol\source\UrlTile.js" />
+    <Content Include="Scripts\ol\source\UTFGrid.js" />
+    <Content Include="Scripts\ol\source\Vector.js" />
+    <Content Include="Scripts\ol\source\VectorEventType.js" />
+    <Content Include="Scripts\ol\source\VectorTile.js" />
+    <Content Include="Scripts\ol\source\WMSServerType.js" />
+    <Content Include="Scripts\ol\source\WMTS.js" />
+    <Content Include="Scripts\ol\source\WMTSRequestEncoding.js" />
+    <Content Include="Scripts\ol\source\XYZ.js" />
+    <Content Include="Scripts\ol\source\Zoomify.js" />
+    <Content Include="Scripts\ol\sphere.js" />
+    <Content Include="Scripts\ol\string.js" />
+    <Content Include="Scripts\ol\structs\LinkedList.js" />
+    <Content Include="Scripts\ol\structs\LRUCache.js" />
+    <Content Include="Scripts\ol\structs\PriorityQueue.js" />
+    <Content Include="Scripts\ol\structs\RBush.js" />
+    <Content Include="Scripts\ol\style.js" />
+    <Content Include="Scripts\ol\style\Circle.js" />
+    <Content Include="Scripts\ol\style\expressions.js" />
+    <Content Include="Scripts\ol\style\Fill.js" />
+    <Content Include="Scripts\ol\style\Icon.js" />
+    <Content Include="Scripts\ol\style\IconAnchorUnits.js" />
+    <Content Include="Scripts\ol\style\IconImage.js" />
+    <Content Include="Scripts\ol\style\IconImageCache.js" />
+    <Content Include="Scripts\ol\style\IconOrigin.js" />
+    <Content Include="Scripts\ol\style\Image.js" />
+    <Content Include="Scripts\ol\style\literal.js" />
+    <Content Include="Scripts\ol\style\RegularShape.js" />
+    <Content Include="Scripts\ol\style\Stroke.js" />
+    <Content Include="Scripts\ol\style\Style.js" />
+    <Content Include="Scripts\ol\style\Text.js" />
+    <Content Include="Scripts\ol\style\TextPlacement.js" />
+    <Content Include="Scripts\ol\Tile.js" />
+    <Content Include="Scripts\ol\TileCache.js" />
+    <Content Include="Scripts\ol\tilecoord.js" />
+    <Content Include="Scripts\ol\tilegrid.js" />
+    <Content Include="Scripts\ol\tilegrid\common.js" />
+    <Content Include="Scripts\ol\tilegrid\TileGrid.js" />
+    <Content Include="Scripts\ol\tilegrid\WMTS.js" />
+    <Content Include="Scripts\ol\TileQueue.js" />
+    <Content Include="Scripts\ol\TileRange.js" />
+    <Content Include="Scripts\ol\TileState.js" />
+    <Content Include="Scripts\ol\tileurlfunction.js" />
+    <Content Include="Scripts\ol\transform.js" />
+    <Content Include="Scripts\ol\uri.js" />
+    <Content Include="Scripts\ol\util.js" />
+    <Content Include="Scripts\ol\VectorRenderTile.js" />
+    <Content Include="Scripts\ol\VectorTile.js" />
+    <Content Include="Scripts\ol\vec\mat4.js" />
+    <Content Include="Scripts\ol\View.js" />
+    <Content Include="Scripts\ol\ViewHint.js" />
+    <Content Include="Scripts\ol\ViewProperty.js" />
+    <Content Include="Scripts\ol\webgl.js" />
+    <Content Include="Scripts\ol\webgl\Buffer.js" />
+    <Content Include="Scripts\ol\webgl\ContextEventType.js" />
+    <Content Include="Scripts\ol\webgl\Helper.js" />
+    <Content Include="Scripts\ol\webgl\PostProcessingPass.js" />
+    <Content Include="Scripts\ol\webgl\RenderTarget.js" />
+    <Content Include="Scripts\ol\webgl\ShaderBuilder.js" />
+    <Content Include="Scripts\ol\webgl\TileTexture.js" />
+    <Content Include="Scripts\ol\worker\geotiff-decoder.js" />
+    <Content Include="Scripts\ol\worker\version.js" />
+    <Content Include="Scripts\ol\worker\webgl.js" />
+    <Content Include="Scripts\ol\xml.js" />
+    <Content Include="Scripts\persian-date.js" />
+    <Content Include="Scripts\persian-datepicker.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\recorder.js" />
+    <Content Include="Scripts\select2.min.js" />
+    <Content Include="Scripts\turf.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Captcha.aspx.cs">
+      <DependentUpon>Captcha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Captcha.aspx.designer.cs">
+      <DependentUpon>Captcha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckAccess.cs" />
+    <Compile Include="CheckSession.cs" />
+    <Compile Include="ClassInsert.cs" />
+    <Compile Include="ClsHelper.cs" />
+    <Compile Include="ClsSqlHelper.cs" />
+    <Compile Include="Data\DataManagement.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataManagement.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EncodePass.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetFillAxis.cs" />
+    <Compile Include="GetGridAccident.cs" />
+    <Compile Include="GetGridPlan.cs" />
+    <Compile Include="GetGridPoliceStation.cs" />
+    <Compile Include="GetGridUser.cs" />
+    <Compile Include="GetHeatMap.cs" />
+    <Compile Include="GetHeatMapDetails.cs" />
+    <Compile Include="GetList5MonthThisYear.cs" />
+    <Compile Include="GetListLocationAnalysis.cs" />
+    <Compile Include="GetLoadSeventhStep.cs" />
+    <Compile Include="GetLocationComparison.cs" />
+    <Compile Include="GetMapAccident.cs" />
+    <Compile Include="GetPopupAccident.cs" />
+    <Compile Include="GetSafetyIndex.cs" />
+    <Compile Include="GetSubmit.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\AccidentAudioHandle.ashx.cs">
+      <DependentUpon>AccidentAudioHandle.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\AccidentImageHandle.ashx.cs">
+      <DependentUpon>AccidentImageHandle.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\AccidentPicturesHandle.ashx.cs">
+      <DependentUpon>AccidentPicturesHandle.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\FileIsExistsHandle.ashx.cs">
+      <DependentUpon>FileIsExistsHandle.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handle\UserImageHandle.ashx.cs">
+      <DependentUpon>UserImageHandle.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="LogOut.aspx.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogOut.aspx.designer.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MapBox.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\AddNewLocation.aspx.cs">
+      <DependentUpon>AddNewLocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\AddNewLocation.aspx.designer.cs">
+      <DependentUpon>AddNewLocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\Event\AccidentList.aspx.cs">
+      <DependentUpon>AccidentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\Event\AccidentList.aspx.designer.cs">
+      <DependentUpon>AccidentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\Event\AddAccident.aspx.cs">
+      <DependentUpon>AddAccident.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\Event\AddAccident.aspx.designer.cs">
+      <DependentUpon>AddAccident.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\Event\CheckAccident.aspx.cs">
+      <DependentUpon>CheckAccident.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\Event\CheckAccident.aspx.designer.cs">
+      <DependentUpon>CheckAccident.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\HadeseKhiz.aspx.cs">
+      <DependentUpon>HadeseKhiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\HadeseKhiz.aspx.designer.cs">
+      <DependentUpon>HadeseKhiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\Map\HeatMap.aspx.cs">
+      <DependentUpon>HeatMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\Map\HeatMap.aspx.designer.cs">
+      <DependentUpon>HeatMap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\Map\SafetyIndex.aspx.cs">
+      <DependentUpon>SafetyIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\Map\SafetyIndex.aspx.designer.cs">
+      <DependentUpon>SafetyIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\Map\Newmap.aspx.cs">
+      <DependentUpon>Newmap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\Map\Newmap.aspx.designer.cs">
+      <DependentUpon>Newmap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\Print\AccidentReport.aspx.cs">
+      <DependentUpon>AccidentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\Print\AccidentReport.aspx.designer.cs">
+      <DependentUpon>AccidentReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\Report\EventProcess.aspx.cs">
+      <DependentUpon>EventProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\Report\EventProcess.aspx.designer.cs">
+      <DependentUpon>EventProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\Report\FirstViwe.aspx.cs">
+      <DependentUpon>FirstViwe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\Report\FirstViwe.aspx.designer.cs">
+      <DependentUpon>FirstViwe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\Report\LocationComparison.aspx.cs">
+      <DependentUpon>LocationComparison.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\Report\LocationComparison.aspx.designer.cs">
+      <DependentUpon>LocationComparison.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\Report\TimeComparison.aspx.cs">
+      <DependentUpon>TimeComparison.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\Report\TimeComparison.aspx.designer.cs">
+      <DependentUpon>TimeComparison.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\Analysis\LocationAnalysis.aspx.cs">
+      <DependentUpon>LocationAnalysis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\Analysis\LocationAnalysis.aspx.designer.cs">
+      <DependentUpon>LocationAnalysis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\Analysis\TimeAnalysis.aspx.cs">
+      <DependentUpon>TimeAnalysis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\Analysis\TimeAnalysis.aspx.designer.cs">
+      <DependentUpon>TimeAnalysis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\SinglePage.aspx.cs">
+      <DependentUpon>SinglePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\SinglePage.aspx.designer.cs">
+      <DependentUpon>SinglePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\UploadData.aspx.cs">
+      <DependentUpon>UploadData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\UploadData.aspx.designer.cs">
+      <DependentUpon>UploadData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\User\AddNewLocation.aspx.cs">
+      <DependentUpon>AddNewLocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\User\AddNewLocation.aspx.designer.cs">
+      <DependentUpon>AddNewLocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\User\AddPoliceStation.aspx.cs">
+      <DependentUpon>AddPoliceStation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\User\AddPoliceStation.aspx.designer.cs">
+      <DependentUpon>AddPoliceStation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\User\AddUser.aspx.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\User\AddUser.aspx.designer.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\User\HadeseKhiz.aspx.cs">
+      <DependentUpon>HadeseKhiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\User\HadeseKhiz.aspx.designer.cs">
+      <DependentUpon>HadeseKhiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\User\Plans.aspx.cs">
+      <DependentUpon>Plans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\User\Plans.aspx.designer.cs">
+      <DependentUpon>Plans.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\User\PoliceStationList.aspx.cs">
+      <DependentUpon>PoliceStationList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\User\PoliceStationList.aspx.designer.cs">
+      <DependentUpon>PoliceStationList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\User\UserInfo.aspx.cs">
+      <DependentUpon>UserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\User\UserInfo.aspx.designer.cs">
+      <DependentUpon>UserInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\User\UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\User\UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordAdvisor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecoveryPassword.aspx.cs">
+      <DependentUpon>RecoveryPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecoveryPassword.aspx.designer.cs">
+      <DependentUpon>RecoveryPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TestPassword.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Report\AccidentReportA4.mrt" />
+    <Content Include="App_Data\Report\AccidentReportA5.mrt" />
+    <Content Include="App_Themes\bootstrap.min.css.map" />
+    <Content Include="App_Themes\bootstrap.rtl.min.css.map" />
+    <Content Include="App_Themes\fonts\BYekan.eot" />
+    <Content Include="App_Themes\fonts\BYekan.ttf" />
+    <Content Include="App_Themes\fonts\BYekan.woff" />
+    <Content Include="App_Themes\fonts\BYekan.woff2" />
+    <Content Include="App_Themes\fonts\fa-brands-400.ttf" />
+    <Content Include="App_Themes\fonts\fa-brands-400.woff" />
+    <Content Include="App_Themes\fonts\fa-brands-400.woff2" />
+    <Content Include="App_Themes\fonts\fa-light-300.ttf" />
+    <Content Include="App_Themes\fonts\fa-light-300.woff" />
+    <Content Include="App_Themes\fonts\fa-light-300.woff2" />
+    <Content Include="App_Themes\fonts\fa-solid-900.ttf" />
+    <Content Include="App_Themes\fonts\fa-solid-900.woff" />
+    <Content Include="App_Themes\fonts\fa-solid-900.woff2" />
+    <Content Include="App_Themes\fonts\IRANSans-Light.eot" />
+    <Content Include="App_Themes\fonts\IRANSans-Light.ttf" />
+    <Content Include="App_Themes\fonts\IRANSans-Light.woff" />
+    <Content Include="App_Themes\fonts\iransansfanum_bold.TTF" />
+    <Content Include="App_Themes\fonts\iransansfanum_bold.woff" />
+    <Content Include="App_Themes\fonts\iransansfanum_bold.woff2" />
+    <Content Include="App_Themes\jquery.md.bootstrap.datetimepicker.style.css.map" />
+    <Content Include="App_Themes\material.min.css.map" />
+    <Content Include="css\bootstrap-grid.css.map" />
+    <Content Include="css\bootstrap-grid.min.css.map" />
+    <Content Include="css\bootstrap-grid.rtl.css.map" />
+    <Content Include="css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="css\bootstrap-reboot.css.map" />
+    <Content Include="css\bootstrap-reboot.min.css.map" />
+    <Content Include="css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="css\bootstrap-utilities.css.map" />
+    <Content Include="css\bootstrap-utilities.min.css.map" />
+    <Content Include="css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="css\bootstrap.min.css.map" />
+    <Content Include="css\bootstrap.rtl.css.map" />
+    <Content Include="css\bootstrap.rtl.min.css.map" />
+    <Content Include="Handle\AccidentAudioHandle.ashx" />
+    <Content Include="Handle\AccidentImageHandle.ashx" />
+    <Content Include="Handle\AccidentPicturesHandle.ashx" />
+    <Content Include="Handle\FileIsExistsHandle.ashx" />
+    <Content Include="Handle\UserImageHandle.ashx" />
+    <Content Include="js\bootstrap.bundle.js.map" />
+    <Content Include="js\bootstrap.bundle.min.js.map" />
+    <Content Include="js\bootstrap.esm.js.map" />
+    <Content Include="js\bootstrap.esm.min.js.map" />
+    <Content Include="js\bootstrap.js.map" />
+    <Content Include="js\bootstrap.min.js.map" />
+    <Content Include="Moderator\Admin.Master" />
+    <Content Include="Data\DataManagement.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataManagement.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Data\DataManagement.dbml.layout">
+      <DependentUpon>DataManagement.dbml</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <Content Include="Site.Master" />
+    <Content Include="Scripts\angular-sanitize.min.js.map" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\jquery.md.bootstrap.datetimepicker.js.map" />
+    <Content Include="Scripts\leaflet\leaflet-locatecontrol\L.Control.Locate.css.map" />
+    <Content Include="Scripts\leaflet\leaflet-locatecontrol\L.Control.Locate.mapbox.css.map" />
+    <Content Include="Scripts\leaflet\leaflet-locatecontrol\L.Control.Locate.mapbox.min.css.map" />
+    <Content Include="Scripts\leaflet\leaflet-locatecontrol\L.Control.Locate.min.css.map" />
+    <Content Include="Scripts\leaflet\leaflet-locatecontrol\L.Control.Locate.min.js.map" />
+    <Content Include="Scripts\leaflet\leaflet-src.esm.js.map" />
+    <Content Include="Scripts\leaflet\leaflet-src.js.map" />
+    <Content Include="Scripts\leaflet\leaflet.js.map" />
+    <Content Include="Scripts\material.min.js.map" />
+    <Content Include="Scripts\ol\format\readme.md" />
+    <Content Include="Scripts\Scripts.rar" />
+    <Content Include="Test.xlsx" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts - Copy\angular-sanitize.min.js.map" />
+    <Content Include="Scripts - Copy\angular.min.js.map" />
+    <Content Include="Scripts - Copy\bootstrap.bundle.js.map" />
+    <Content Include="Scripts - Copy\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts - Copy\bootstrap.esm.js.map" />
+    <Content Include="Scripts - Copy\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts - Copy\bootstrap.js.map" />
+    <Content Include="Scripts - Copy\bootstrap.min.js.map" />
+    <Content Include="Scripts - Copy\jquery.md.bootstrap.datetimepicker.js.map" />
+    <Content Include="Scripts - Copy\leaflet\leaflet-locatecontrol\L.Control.Locate.css.map" />
+    <Content Include="Scripts - Copy\leaflet\leaflet-locatecontrol\L.Control.Locate.mapbox.css.map" />
+    <Content Include="Scripts - Copy\leaflet\leaflet-locatecontrol\L.Control.Locate.mapbox.min.css.map" />
+    <Content Include="Scripts - Copy\leaflet\leaflet-locatecontrol\L.Control.Locate.min.css.map" />
+    <Content Include="Scripts - Copy\leaflet\leaflet-locatecontrol\L.Control.Locate.min.js.map" />
+    <Content Include="Scripts - Copy\leaflet\leaflet-src.esm.js.map" />
+    <Content Include="Scripts - Copy\leaflet\leaflet-src.js.map" />
+    <Content Include="Scripts - Copy\leaflet\leaflet.js.map" />
+    <Content Include="Scripts - Copy\material.min.js.map" />
+    <Content Include="Scripts - Copy\ol\format\readme.md" />
+    <Content Include="Scripts - Copy\Scripts.rar" />
+    <Content Include="Scripts\jsFirstViewHelper.js~RF579e88c.TMP" />
+    <Content Include="Scripts\jsHeatMapHelper.js~RFdba791.TMP" />
+    <Content Include="Scripts\jsTimeComparisonHelper.js~RF6cc70b.TMP" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataForImport\" />
+    <Folder Include="DownloadFile\" />
+    <Folder Include="MediaUploader\User\" />
+    <Folder Include="Temp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62070</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49686/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets'))" />
+    <Error Condition="!Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />
+  <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

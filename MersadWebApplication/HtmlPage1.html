@@ -1,0 +1,59 @@
+﻿<div style="position:absolute;top:-200%;"><h1><a href="https://www.codebazan.ir/">&#1705;&#1583;&#1576;&#1575;&#1586;&#1575;&#1606;</a></h1></div>
+<style type="text/css">
+    .drag {
+        position: relative;
+        cursor: hand;
+        z-index: 1000;
+    }
+</style>
+<script type="text/javascript">
+    var dragobject = {
+        z: 0, x: 0, y: 0, offsetx: null, offsety: null, targetobj: null, dragapproved: 0,
+        initialize: function () {
+            document.onmousedown = this.drag
+            document.onmouseup = function () { this.dragapproved = 0 }
+        },
+        drag: function (e) {
+            var evtobj = window.event ? window.event : e
+            this.targetobj = window.event ? event.srcElement : e.target
+            if (this.targetobj.className == "drag") {
+                this.dragapproved = 1
+                if (isNaN(parseInt(this.targetobj.style.left))) { this.targetobj.style.left = 0 }
+                if (isNaN(parseInt(this.targetobj.style.top))) { this.targetobj.style.top = 0 }
+                this.offsetx = parseInt(this.targetobj.style.left)
+                this.offsety = parseInt(this.targetobj.style.top)
+                this.x = evtobj.clientX
+                this.y = evtobj.clientY
+                if (evtobj.preventDefault)
+                    evtobj.preventDefault()
+                document.onmousemove = dragobject.moveit
+            }
+        },
+        moveit: function (e) {
+            var evtobj = window.event ? window.event : e
+            if (this.dragapproved == 1) {
+                this.targetobj.style.left = this.offsetx + evtobj.clientX - this.x + "px"
+                this.targetobj.style.top = this.offsety + evtobj.clientY - this.y + "px"
+                return false
+            }
+        }
+    }
+
+    dragobject.initialize()
+
+</script>
+
+
+<html>
+<head>
+    <!--drag engine code installed here-->
+</head>
+<body>
+    <h1>
+        <div style="color:red;border:5px solid red;border-radius:5px;width:50%;background-color:#111;padding:10;" class="drag">
+            <!------شروع ,ویرایش نوشته شما------>
+            http//:codebazan.ir
+        </div>
+
+</body>
+</html>

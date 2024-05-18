@@ -1,0 +1,4 @@
+MersadWebApplication/MersadDatabase/Mersad.mdf filter=lfs diff=lfs merge=lfs -text
+MersadWebApplication/MersadDatabase/Mersad_log.ldf filter=lfs diff=lfs merge=lfs -text
+"*.mdf filter=lfs" 
+"*.ldf filter=lfs" 
